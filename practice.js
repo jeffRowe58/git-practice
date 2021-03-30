@@ -44,3 +44,15 @@ function mostSpentOnItem(x) {
 }
 
 console.log(mostSpentOnItem(shoppingCart));
+
+
+
+
+var test = [1,2,3,4,5,6,7,8,9];
+
+function removeAtIndex(array, index) {
+    var arr1 = array.slice(0, index);
+    var arr2 = array.slice(index + 1);
+    return arr1.concat(arr2);
+}
+console.log(removeAtIndex(test, test.indexOf(5)));
