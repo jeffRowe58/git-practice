@@ -110,8 +110,8 @@
 function twoDice(x) {
     var res = [];
     while (res.length < x) {
-        var die1 = Math.floor(Math.random() * (6 - 0) + 1);
-        var die2 = Math.floor(Math.random() * (6 - 0) + 1);
+        var die1 = Math.floor(Math.random() * (6) + 1);
+        var die2 = Math.floor(Math.random() * (6) + 1);
         res.push(die1 + die2);
     }
     return res;
@@ -121,7 +121,7 @@ function twoDice(x) {
 function twentySideDie(x){
     var res = [];
     while(res.length < x) {
-        var twentyDie = Math.floor(Math.random() * (20 - 0) + 1);
+        var twentyDie = Math.floor(Math.random() * (20) + 1);
         res.push(twentyDie);
     }
     return res;
@@ -131,7 +131,7 @@ function twentySideDie(x){
 function twelveSidedDie(x){
     var res = [];
     while(res.length < x) {
-        var twelveDie = Math.floor(Math.random() * (12 - 0) + 1);
+        var twelveDie = Math.floor(Math.random() * (12) + 1);
         res.push(twelveDie);
     }
     return res;
@@ -141,20 +141,20 @@ function twelveSidedDie(x){
 function tetrahedron(x) {
     var res = [];
     while(res.length < x) {
-    var tetrahDie = Math.floor(Math.random() * (4 - 0) + 1);
+    var tetrahDie = Math.floor(Math.random() * (4) + 1);
     res.push(tetrahDie);
 }
-    return tetrahDie;
+    return res;
 }
 //tetrahedron(7);
 
 function rollDie(x) {
     var res = [];
     while(res.length < x) {
-        var Onedie = Math.floor(Math.random() * (6 - 0) + 1);
+        var Onedie = Math.floor(Math.random() * (6) + 1);
         res.push(Onedie);
     }
-    return Onedie;
+    return res;
 }
 //rollDie(12);
 
@@ -173,10 +173,10 @@ function listOfRollsFromDieFunction(x,y){
     var die = [];
     die.push(y(x));
 
-    return die;
+    return console.log("The dice you rolled were " + die);
 }
-console.log(funArray[0]);
+
 var userCount = parseFloat(prompt("How many die would you like to roll?"));
 var userDie = parseFloat(prompt("Which type of dice would you like to roll?" + "\n" + "1) For two dice" + "\n" + "2) For twenty sided die" + "\n" + "3) For twelve sided die" + "\n" + "4) tetrahedron die" + "\n" + "5) For a single die"));
 var uDConvert = userDie - 1;
-console.log(listOfRollsFromDieFunction(userCount,(funArray[uDConvert])));
+listOfRollsFromDieFunction(userCount,(funArray[(uDConvert)]));
