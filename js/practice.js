@@ -176,7 +176,44 @@ function listOfRollsFromDieFunction(x,y){
     return console.log("The dice you rolled were " + die);
 }
 
-var userCount = parseFloat(prompt("How many die would you like to roll?"));
-var userDie = parseFloat(prompt("Which type of dice would you like to roll?" + "\n" + "1) For two dice" + "\n" + "2) For twenty sided die" + "\n" + "3) For twelve sided die" + "\n" + "4) tetrahedron die" + "\n" + "5) For a single die"));
-var uDConvert = userDie - 1;
-listOfRollsFromDieFunction(userCount,(funArray[(uDConvert)]));
+//var userCount = parseFloat(prompt("How many die would you like to roll?"));
+//var userDie = parseFloat(prompt("Which type of dice would you like to roll?" + "\n" + "1) For two dice" + "\n" + "2) For twenty sided die" + "\n" + "3) For twelve sided die" + "\n" + "4) tetrahedron die" + "\n" + "5) For a single die"));
+//var uDConvert = userDie - 1;
+//listOfRollsFromDieFunction(userCount,(funArray[(uDConvert)]));
+
+//Additional function exercises
+var array = [1,2,3,4,5,6,7,8,9];
+var stringArray = ["Jeff", "'Merica", "Watermellon", "no"];
+function first(x){
+    return x[0];
+}
+first(array);
+
+function secondToLast(x) {
+    return x[(x.length - 2)];
+}
+console.log(secondToLast(array));
+
+function rest(x){
+    x.shift();
+    return x;
+}
+console.log(rest(array));
+
+function getLongestString(x){
+    var res = [];
+    for(var i = 0; i < x.length; i++){
+        res.push(x[i].length);
+    }
+    return x[(res.indexOf(Math.max(...res)))];
+}
+console.log(getLongestString(stringArray));
+
+function getShortestArray(x){
+    var res = [];
+    for(var i = 0; i < x.length; i++){
+        res.push(x[i].length);
+    }
+    return x[(res.indexOf(Math.min(...res)))];
+}
+console.log(getShortestArray(stringArray));
