@@ -1,3 +1,4 @@
+"use strict";
 // const shoppingCart = {
 //     "tax": .08,
 //     "items": [
@@ -217,3 +218,14 @@ function getShortestArray(x){
     return x[(res.indexOf(Math.min(...res)))];
 }
 console.log(getShortestArray(stringArray));
+
+function addTwoArrays(x,y) {
+    return x.concat(y);
+}
+console.log(addTwoArrays([1,2,3],[4,5,6]));
+
+function getUniqueValues(x) {
+   return x.filter((item, index) => x.indexOf(item) === index);
+}
+console.log(getUniqueValues(["a",'b','a','b','c','c']));
+
