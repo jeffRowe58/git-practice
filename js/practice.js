@@ -229,3 +229,13 @@ function getUniqueValues(x) {
 }
 console.log(getUniqueValues(["a",'b','a','b','c','c']));
 
+function reverseArray (x) {
+    return x.reverse();
+}
+console.log(reverseArray(stringArray));
+
+var inspirationQuotes = ["Lead, follow, or get out my way.", "Say what you mean and mean what you say.", "Never tell people how to do things. Tell them what to do and they will surprise you with their ingenuity.", "If everyone is thinking alike, then someone isn't thinking.", "Take not counsil of your fears"];
+function getRandomQuote(x) {
+    return x[(Math.floor(Math.random() * (x.length -1)))];
+}
+console.log(getRandomQuote(inspirationQuotes));
