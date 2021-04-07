@@ -183,59 +183,241 @@ function listOfRollsFromDieFunction(x,y){
 //listOfRollsFromDieFunction(userCount,(funArray[(uDConvert)]));
 
 //Additional function exercises
-var array = [1,2,3,4,5,6,7,8,9];
-var stringArray = ["Jeff", "'Merica", "Watermellon", "no"];
-function first(x){
-    return x[0];
-}
-first(array);
+// var array = [1,2,3,4,5,6,7,8,9];
+// var stringArray = ["Jeff", "'Merica", "Watermellon", "no"];
+// function first(x){
+//     return x[0];
+// }
+// first(array);
+//
+// function secondToLast(x) {
+//     return x[(x.length - 2)];
+// }
+// console.log(secondToLast(array));
+//
+// function rest(x){
+//     x.shift();
+//     return x;
+// }
+// console.log(rest(array));
 
-function secondToLast(x) {
-    return x[(x.length - 2)];
-}
-console.log(secondToLast(array));
+// function getLongestString(x){
+//     var res = [];
+//     for(var i = 0; i < x.length; i++){
+//         res.push(x[i].length);
+//     }
+//     return x[(res.indexOf(Math.max(...res)))];
+// }
+// console.log(getLongestString(stringArray));
+//
+// function getShortestArray(x){
+//     var res = [];
+//     for(var i = 0; i < x.length; i++){
+//         res.push(x[i].length);
+//     }
+//     return x[(res.indexOf(Math.min(...res)))];
+// }
+// console.log(getShortestArray(stringArray));
+//
+// function addTwoArrays(x,y) {
+//     return x.concat(y);
+// }
+// console.log(addTwoArrays([1,2,3],[4,5,6]));
+//
+// function getUniqueValues(x) {
+//    return x.filter((item, index) => x.indexOf(item) === index);
+// }
+// console.log(getUniqueValues(["a",'b','a','b','c','c']));
+//
+// function reverseArray (x) {
+//     return x.reverse();
+// }
+// console.log(reverseArray(stringArray));
+//
+// var inspirationQuotes = ["Lead, follow, or get out my way.", "Say what you mean and mean what you say.", "Never tell people how to do things. Tell them what to do and they will surprise you with their ingenuity.", "If everyone is thinking alike, then someone isn't thinking.", "Take not counsil of your fears"];
+// function getRandomQuote(x) {
+//     return x[(Math.floor(Math.random() * (x.length -1)))];
+// }
+// console.log(getRandomQuote(inspirationQuotes));
+//
+// function getIndexesOf(x,y){
+//     var res = [];
+//     for(var i = 0; i < y.length; i++) {
+//         if(y[i] === x){
+//             res.push(i);
+//         }
+//     }
+//     return res;
+// }
+// console.log(getIndexesOf(2, [1,2,3,4,2,5,6,2,5,2]));
 
-function rest(x){
-    x.shift();
-    return x;
-}
-console.log(rest(array));
-
-function getLongestString(x){
+// function removeAll(x,y){
+//    for(var i = 0; i < x.length; i++) {
+//        if(x[i] === y){
+//            ;
+//        }
+//    }
+//    return res;
+// }
+// console.log(removeAll([1,2,3,4,2,5,6,2,5,2],2));
+//
+//
+//
+//EXTRA PRACTICE ARRAY AND OBJECTS
+function filterNumbers(x) {
     var res = [];
     for(var i = 0; i < x.length; i++){
-        res.push(x[i].length);
+        if(!isNaN((parseFloat(x[i])))){
+            res.push(x[i]);
+        }
     }
-    return x[(res.indexOf(Math.max(...res)))];
+return res;
 }
-console.log(getLongestString(stringArray));
+console.log(filterNumbers(["fred", true, 5, 3]));
 
-function getShortestArray(x){
-    var res = [];
+//Get Older Object
+var dog = [
+
+    {
+        name: "Chompers",
+        breed: "Pug",
+        age: 7
+    },
+    {
+        name: "Freddy",
+        breed: "Lab",
+        age: 4
+    },
+    {
+        name: "Mr. Pig",
+        breed: "Mastif",
+        age: 10
+    }
+];
+// getOlder Function
+function getOlder(x){
+    x.forEach(function(dogs){
+         dogs.age++
+    })
+return x;
+}
+console.log(getOlder(dog));
+
+//washCars object array
+var car = [
+    {
+        make: 'Volvo',
+        color: 'red',
+        year: '1996',
+        isDirty: true
+    },
+    {
+        make: 'Toyota',
+        color: 'black',
+        year: 2004,
+        isDirty: false
+    },
+    {
+        make: 'Ford',
+        color: 'white',
+        year: 2007,
+        isDirty: true
+    }
+];
+//function washCars
+function washCars(x){
+    x.forEach(function(cars) {
+        if (cars.isDirty === true) {
+            console.log("Your " + cars.make + " is dirty and will be washed" );
+            cars.isDirty = false;
+            console.log(cars)
+        } else {
+            console.log('Your ' + cars.make + ' is already clean');
+        }
+    })
+}
+washCars(car);
+
+//adminList object
+
+var users = [
+    {
+        isAdmin: true,
+        email: 'user1@email.com'
+    },
+    {
+        isAdmin: true,
+        email: 'user2@email.com'
+    },
+    {
+        isAdmin: false,
+        email: 'user3@email.com'
+    }
+];
+
+//function
+function adminList(x){
+    var res = 0;
+    x.forEach(function(user){
+        if(user.isAdmin === true){
+            res++;
+        }
+    })
+    return res;
+}
+console.log(adminList(users));
+
+// function adminList(x){
+//     var res = [];
+//     x.forEach(function(user){
+//         if(user.isAdmin === true){
+//             res.push(user.email);
+//         }
+//     })
+//     return res;
+// }
+// console.log(adminList(users));
+
+// function adminList(x){
+//     var res = [];
+//     x.forEach(function(user){
+//         if(user.isAdmin === true){
+//             res.push(user);
+//         }
+//     })
+//     return res;
+// }
+// console.log(adminList(users));
+
+//makeSandwichObjects object arrays
+var breads = [
+    'white',
+    'wheat',
+    'rhy',
+    'white'
+];
+var fillings = [
+    'pb&j',
+    'ham',
+    'cheese steak',
+    'tuna'
+];
+
+//function
+function makeSandwichObjects(x,y){
+    var sandwich = [
+        {
+            bread:"",
+            fillings:""
+        }
+    ];
     for(var i = 0; i < x.length; i++){
-        res.push(x[i].length);
+        sandwich[i].bread = x[i];
+        sandwich[i].fillings = y[i].toString();
+        var arrayMake = i + 1;
+        sandwich[arrayMake] = {};
     }
-    return x[(res.indexOf(Math.min(...res)))];
+    sandwich.pop();
+    return sandwich;
 }
-console.log(getShortestArray(stringArray));
-
-function addTwoArrays(x,y) {
-    return x.concat(y);
-}
-console.log(addTwoArrays([1,2,3],[4,5,6]));
-
-function getUniqueValues(x) {
-   return x.filter((item, index) => x.indexOf(item) === index);
-}
-console.log(getUniqueValues(["a",'b','a','b','c','c']));
-
-function reverseArray (x) {
-    return x.reverse();
-}
-console.log(reverseArray(stringArray));
-
-var inspirationQuotes = ["Lead, follow, or get out my way.", "Say what you mean and mean what you say.", "Never tell people how to do things. Tell them what to do and they will surprise you with their ingenuity.", "If everyone is thinking alike, then someone isn't thinking.", "Take not counsil of your fears"];
-function getRandomQuote(x) {
-    return x[(Math.floor(Math.random() * (x.length -1)))];
-}
-console.log(getRandomQuote(inspirationQuotes));
+console.log(makeSandwichObjects(breads, fillings))
