@@ -74,19 +74,21 @@
 // console.log(allIndexesOf(fruits,"guava"));
 // console.log(allIndexesOf(fruits, "pineapple"));
 
-//function removeAll(array, value)
-// var bugs = ['mosquito', 'ant', 'scorpion', 'ant', 'mosquito', 'ant', 'typo', 'reference error', 'type error'];
-// function removeAll(x,y){
-//     x.forEach(function (element, index) {
-//         if(element === y){
-//             x.splice(index, 1);
-//         }
-//     })
-//     return x;
-// }
-// console.log(removeAll(bugs,'ant'));
-// console.log(removeAll(bugs, "mosquito"));
-// console.log(bugs, "roach");
+
+var bugs = ['mosquito', 'ant', 'scorpion', 'ant', 'ant','mosquito', 'typo', 'reference error', 'type error'];
+function removeAll(x,y){
+    for(var i = 0; i < x.length; i++){
+        if(x[i] === y){
+            x.splice(i, 1);
+            i--;
+        }
+
+    }
+    return x;
+}
+console.log(removeAll(bugs,'ant'));
+console.log(removeAll(bugs, "mosquito"));
+console.log(bugs, "roach");
 
 // var theTruck = {
 //     make: "Toyota",
@@ -264,108 +266,108 @@ function listOfRollsFromDieFunction(x,y){
 //
 //
 //EXTRA PRACTICE ARRAY AND OBJECTS
-function filterNumbers(x) {
-    var res = [];
-    for(var i = 0; i < x.length; i++){
-        if(!isNaN((parseFloat(x[i])))){
-            res.push(x[i]);
-        }
-    }
-return res;
-}
-console.log(filterNumbers(["fred", true, 5, 3]));
-
-//Get Older Object
-var dog = [
-
-    {
-        name: "Chompers",
-        breed: "Pug",
-        age: 7
-    },
-    {
-        name: "Freddy",
-        breed: "Lab",
-        age: 4
-    },
-    {
-        name: "Mr. Pig",
-        breed: "Mastif",
-        age: 10
-    }
-];
-// getOlder Function
-function getOlder(x){
-    x.forEach(function(dogs){
-         dogs.age++
-    })
-return x;
-}
-console.log(getOlder(dog));
-
-//washCars object array
-var car = [
-    {
-        make: 'Volvo',
-        color: 'red',
-        year: '1996',
-        isDirty: true
-    },
-    {
-        make: 'Toyota',
-        color: 'black',
-        year: 2004,
-        isDirty: false
-    },
-    {
-        make: 'Ford',
-        color: 'white',
-        year: 2007,
-        isDirty: true
-    }
-];
-//function washCars
-function washCars(x){
-    x.forEach(function(cars) {
-        if (cars.isDirty === true) {
-            console.log("Your " + cars.make + " is dirty and will be washed" );
-            cars.isDirty = false;
-            console.log(cars)
-        } else {
-            console.log('Your ' + cars.make + ' is already clean');
-        }
-    })
-}
-washCars(car);
-
-//adminList object
-
-var users = [
-    {
-        isAdmin: true,
-        email: 'user1@email.com'
-    },
-    {
-        isAdmin: true,
-        email: 'user2@email.com'
-    },
-    {
-        isAdmin: false,
-        email: 'user3@email.com'
-    }
-];
-
-//function
-function adminList(x){
-    var res = 0;
-    x.forEach(function(user){
-        if(user.isAdmin === true){
-            res++;
-        }
-    })
-    return res;
-}
-console.log(adminList(users));
+// function filterNumbers(x) {
+//     var res = [];
+//     for(var i = 0; i < x.length; i++){
+//         if(!isNaN((parseFloat(x[i])))){
+//             res.push(x[i]);
+//         }
+//     }
+// return res;
+// }
+// console.log(filterNumbers(["fred", true, 5, 3]));
+//
+// //Get Older Object
+// var dog = [
+//
+//     {
+//         name: "Chompers",
+//         breed: "Pug",
+//         age: 7
+//     },
+//     {
+//         name: "Freddy",
+//         breed: "Lab",
+//         age: 4
+//     },
+//     {
+//         name: "Mr. Pig",
+//         breed: "Mastif",
+//         age: 10
+//     }
+// ];
+// // getOlder Function
+// function getOlder(x){
+//     x.forEach(function(dogs){
+//          dogs.age++
+//     })
+// return x;
+// }
+// console.log(getOlder(dog));
+//
+// //washCars object array
+// var car = [
+//     {
+//         make: 'Volvo',
+//         color: 'red',
+//         year: '1996',
+//         isDirty: true
+//     },
+//     {
+//         make: 'Toyota',
+//         color: 'black',
+//         year: 2004,
+//         isDirty: false
+//     },
+//     {
+//         make: 'Ford',
+//         color: 'white',
+//         year: 2007,
+//         isDirty: true
+//     }
+// ];
+// //function washCars
+// function washCars(x){
+//     x.forEach(function(cars) {
+//         if (cars.isDirty === true) {
+//             console.log("Your " + cars.make + " is dirty and will be washed" );
+//             cars.isDirty = false;
+//             console.log(cars)
+//         } else {
+//             console.log('Your ' + cars.make + ' is already clean');
+//         }
+//     })
+// }
+// washCars(car);
+//
+// //adminList object
+//
+// var users = [
+//     {
+//         isAdmin: true,
+//         email: 'user1@email.com'
+//     },
+//     {
+//         isAdmin: true,
+//         email: 'user2@email.com'
+//     },
+//     {
+//         isAdmin: false,
+//         email: 'user3@email.com'
+//     }
+// ];
+//
+// //function
+// function adminList(x){
+//     var res = 0;
+//     x.forEach(function(user){
+//         if(user.isAdmin === true){
+//             res++;
+//         }
+//     })
+//     return res;
+// }
+// console.log(adminList(users));
 
 // function adminList(x){
 //     var res = [];
@@ -390,34 +392,34 @@ console.log(adminList(users));
 // console.log(adminList(users));
 
 //makeSandwichObjects object arrays
-var breads = [
-    'white',
-    'wheat',
-    'rhy',
-    'white'
-];
-var fillings = [
-    'pb&j',
-    'ham',
-    'cheese steak',
-    'tuna'
-];
-
-//function
-function makeSandwichObjects(x,y){
-    var sandwich = [
-        {
-            bread:"",
-            fillings:""
-        }
-    ];
-    for(var i = 0; i < x.length; i++){
-        sandwich[i].bread = x[i];
-        sandwich[i].fillings = y[i].toString();
-        var arrayMake = i + 1;
-        sandwich[arrayMake] = {};
-    }
-    sandwich.pop();
-    return sandwich;
-}
-console.log(makeSandwichObjects(breads, fillings))
+// var breads = [
+//     'white',
+//     'wheat',
+//     'rhy',
+//     'white'
+// ];
+// var fillings = [
+//     'pb&j',
+//     'ham',
+//     'cheese steak',
+//     'tuna'
+// ];
+//
+// //function
+// function makeSandwichObjects(x,y){
+//     var sandwich = [
+//         {
+//             bread:"",
+//             fillings:""
+//         }
+//     ];
+//     for(var i = 0; i < x.length; i++){
+//         sandwich[i].bread = x[i];
+//         sandwich[i].fillings = y[i].toString();
+//         var arrayMake = i + 1;
+//         sandwich[arrayMake] = {};
+//     }
+//     sandwich.pop();
+//     return sandwich;
+// }
+// console.log(makeSandwichObjects(breads, fillings))

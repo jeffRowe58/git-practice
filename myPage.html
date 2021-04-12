@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
     <head>
         <meta charset="UTF-8">
         <title>Jeff's Professional Page </title>
         <link rel="stylesheet" href="css/myPage.css">
     </head>
     <body>
-    <img src="img/headshot.jpg">
         <header>
 
             <h1>WELCOME TO MY PAGE</h1>
@@ -15,10 +14,42 @@
         <hr>
         <main>
             <div>
-                <p class="box">
-                    First off I'd like to thank you for taking the time to stop by. My name is Jeff, and site is for you to get a chance to get to know me. It is also a chance for me to showcase some of the skill I've learned over time. <br> In 2001 a 19 year old boy decided to raise his hand and enlist into the United States Army. During my time I worked as a Diesel Mechanic, a Shop Foreman, and a Maintenance Supervisor who was responsible for over 8 million dollars worth of equipment. I also had the pleasure of being a Recruiter for the Army. I learned a great many things about life, responsibility, accountability, and the importance of a great work ethic.<br> How did I get here, well glad you asked. In February 2021 I retired from the Army after 20 years. It was a blessing, but also a time of transformation. Part of my transformation was to go to a career accelerator and start my next journey. I attended Codeup for Full Stack Web Development and have loved it ever since I started the pre-work. Once I finish my hope is to use a combination of all the talents I've learned to provide a professionally design website for you.
-
-                </p>
+                <form  class="form" method="post" action="https://request-inspector.glitch.me/" id="myContact">
+                    <h4>Contact Info</h4>
+                    <p class="contact">Jeffrey Rowe</p>
+                    <p class="contact">McKinney, Texas</p>
+                    <p class="contact">Cellphone: 719-761-2638</p>
+                    <p class="contact">Email: jeffrey.r.rowe58@gmail.com</p>
+                    <p style="border-bottom: 2px solid lightgray"></p>
+                        <div class="trick">
+                            <h5><a href="">Would you like to leave a comment?</a></h5>
+                            <label for="eMail" class="poof">Email Address:</label>
+                            <input id="eMail" name="eMail" type="text" placeholder="Please enter your e-mail address?" class="poof"><br>
+                            <h4 class="poof">Please leave a comment!</h4><br>
+                            <label class="poof">
+                            <textarea name="comment"></textarea>
+                            </label><br>
+                            <button type="submit" class="poof">Send Message</button>
+                        </div>
+                    </form>
+                <div class="parent">
+                    <img src="img/flag-Stars-and-Stripes-May-1-1795.jpg" class="starsStripes">
+                    <img src="img/Screen%20Shot%202021-04-11%20at%2015.08.27.png" class="armyFlag">
+                </div>
+                    <p class="box">
+                    First off I'd like to thank you for taking the time to stop by. My name is Jeff, and site is for you to get a chance to get to know me. It is also a chance for me to showcase some of the skill I've learned over time.<br><br> In 2001 a 19 year old boy decided to raise his hand and enlist into the United States Army. During my time I worked as a Diesel Mechanic, a Shop Foreman, and a Maintenance Supervisor who was responsible for over 8 million dollars worth of equipment. I also had the pleasure of being a Recruiter for the Army. I learned a great many things about life, responsibility, accountability, and the importance of a great work ethic.<br><br> How did I get here, well glad you asked. In February 2021 I retired from the Army after 20 years. It was a blessing, but also a time of transformation. Part of my transformation was to go to a career accelerator and start my next journey. I attended Codeup for Full Stack Web Development and have loved it ever since I started the pre-work. Once I finish my hope is to use a combination of all the talents I've learned to provide a professionally design website for you.
+                     </p>
+            </div>
+            <div class="lang">
+                    <h2>My Languages</h2>
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>JQuery</li>
+                        <li>Java</li>
+                        <li>MySQL</li>
+                    </ul>
             </div>
         </main>
         <script src="js/myPage.js"></script>

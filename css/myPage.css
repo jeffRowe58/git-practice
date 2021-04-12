@@ -1,20 +1,102 @@
+body{
+    background: #f5f0f0;
+}
+
 header{
-    alignment: center;
+    position: static;
     margin: auto;
     height: 100px;
     text-align: center;
+    background-image: url(../img/headshot.jpg);
+    background-repeat: no-repeat;
+    background-size: 100px;
 }
-img{
-    width: 100px;
-    float: left;
-    display: inline-block;
-    margin-left: 2em;
-}
+
 span{
     font-weight: bolder;
     font-size: larger;
 }
-.box{
+
+.box {
     width: 800px;
+    flex-shrink: 2;
     margin: auto;
+    border: 1px solid lightgray;
+    margin-top: -8px;
+    padding: 1em;
+    font-family: sans-serif;
+    box-shadow: 5px 2px 2px gray ;
 }
+
+.form{
+    border: 2px solid lightgray;
+    width: 400px;
+    height: 245px;
+    float:left;
+    text-align: center;
+    box-shadow: 5px 2px 2px gray;
+    transition: height .1s;
+}
+
+.form:hover{
+    height: 485px;
+}
+
+.poof{
+    display: none;
+}
+
+.trick:hover .poof{
+    display: inline-block;
+}
+
+textarea{
+    resize: none;
+    margin-bottom: 1em;
+    width: 180px;
+    height: 100px;
+}
+
+h4{
+    text-decoration: underline;
+}
+
+.contact{
+    text-align: left;
+}
+
+.parent{
+    position: relative;
+    float: right;
+    opacity: 1;
+}
+
+.starsStripes{
+    width: 400px;
+    height: 249px;
+    position: absolute;
+}
+@keyframes armyUS {
+  from {
+      opacity: 0;
+  }
+    to {
+        opacity: 1;
+    }
+}
+
+.armyFlag{
+    width: 400px;
+    height: 249px;
+    position: relative;
+    animation-duration: 8s;
+    animation-name: armyUS;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.lang{
+    text-align: center;
+}
+
+
