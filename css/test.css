@@ -19,33 +19,10 @@ span{
     font-weight: bolder;
     font-size: larger;
 }
-.wrapper {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 5px;
-    grid-auto-rows: minmax(100px, auto);
-}
-
-.one {
-    grid-column: 1;
-    grid-row: 1;
-    width: 1fr;
-}
-.two {
-    grid-column: 2;
-    grid-row: 1;
-    width: 2fr;
-}
-.three {
-    grid-column: 3;
-    grid-row: 1;
-    width: 1fr
-}
 
 .box {
-    margin: auto;
+
     border: 1px solid lightgray;
-    margin-top: -8px;
     padding: 1em;
     font-family: sans-serif;
     box-shadow: 5px 2px 2px gray ;
@@ -120,10 +97,7 @@ form>textarea{
 }
 
 .parent{
-    position: relative;
     opacity: 1;
-    margin-left: 130px;
-    margin-top: -8px
 }
 
 .starsStripes{
