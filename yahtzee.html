@@ -2,14 +2,14 @@
 <html lang="en">
   <head>
       <meta charset="UTF-8">
-      <title>Yatzee</title>
+      <title>Yahtzee</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/6a7da1b2ca.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/yahtzee.css">
   </head>
   <body>
     <header>
-      <h1 class="text-center">Yatzee</h1>
+      <h1 class="text-center">Yahtzee</h1>
       <h5 class="text-center">A project and game</h5>
     </header>
     <main>
@@ -36,92 +36,92 @@
         <div class="d-flex flex-row justify-content-around bg-white">
           <div class="col  p-0 ">Aces</div>
           <div class="col  p-0 ">Count and add only Aces</div>
-          <div class="col  p-0 ">       </div>
-          <div class="col  p-0 ">       </div>
-          <div class="col  p-0 ">       </div>
-          <div class="col  p-0 ">       </div>
-          <div class="col  p-0 ">       </div>
-          <div class="col  p-0 ">       </div>
+          <div class="col p-0" id="g1Ones">    6   </div>
+          <div class="col g2Ones p-0" id="g2Ones">       </div>
+          <div class="col g3Ones p-0 " id="g3Ones">       </div>
+          <div class="col  p-0 " id="g4Ones">       </div>
+          <div class="col  p-0 " id="g5Ones">       </div>
+          <div class="col  p-0 " id="g6Ones">       </div>
         </div>
         <div class="d-flex flex-row justify-content-around bg-white">
           <div class="col  p-0 ">Twos</div>
           <div class="col  p-0 ">Count and add only Twos</div>
-          <div class="col  p-0 ">       </div>
-          <div class="col  p-0 ">       </div>
-          <div class="col  p-0 ">       </div>
-          <div class="col  p-0 ">       </div>
-          <div class="col  p-0 ">       </div>
-          <div class="col  p-0 ">       </div>
+          <div class="col  p-0 " id="g1Twos">   8    </div>
+          <div class="col  p-0 " id="g2Twos">       </div>
+          <div class="col  p-0 " id="g3Twos">       </div>
+          <div class="col  p-0 " id="g4Twos">       </div>
+          <div class="col  p-0 " id="g5Twos">       </div>
+          <div class="col  p-0 " id="g6Twos">       </div>
         </div>
         <div class="d-flex flex-row justify-content-around bg-white">
           <div class="col  p-0 ">Threes</div>
           <div class="col  p-0 ">Count and add only Threes</div>
-          <div class="col  p-0 ">       </div>
-          <div class="col  p-0 ">       </div>
-          <div class="col  p-0 ">       </div>
-          <div class="col  p-0 ">       </div>
-          <div class="col  p-0 ">       </div>
-          <div class="col  p-0 ">       </div>
+          <div class="col  p-0 " id="g1Threes">       </div>
+          <div class="col  p-0 " id="g2Threes">       </div>
+          <div class="col  p-0 " id="g3Threes">       </div>
+          <div class="col  p-0 " id="g4Threes">       </div>
+          <div class="col  p-0 " id="g5Threes">       </div>
+          <div class="col  p-0 " id="g6Threes">       </div>
         </div>
         <div class="d-flex flex-row justify-content-around bg-white">
           <div class="col  p-0 ">Fours</div>
           <div class="col  p-0 ">Count and add only Fours</div>
-          <div class="col  p-0 ">       </div>
-          <div class="col  p-0 ">       </div>
-          <div class="col  p-0 ">       </div>
-          <div class="col  p-0 ">       </div>
-          <div class="col  p-0 ">       </div>
-          <div class="col  p-0 ">       </div>
+          <div class="col  p-0 " id="g1Fours">       </div>
+          <div class="col  p-0 " id="g2Fours">       </div>
+          <div class="col  p-0 " id="g3Fours">       </div>
+          <div class="col  p-0 " id="g4Fours">       </div>
+          <div class="col  p-0 " id="g5Fours">       </div>
+          <div class="col  p-0 " id="g6Fours">       </div>
         </div>
         <div class="d-flex flex-row justify-content-around bg-white">
           <div class="col  p-0 ">Fives</div>
           <div class="col  p-0 ">Count and add only Fives</div>
-          <div class="col  p-0 ">       </div>
-          <div class="col  p-0 ">       </div>
-          <div class="col  p-0 ">       </div>
-          <div class="col  p-0 ">       </div>
-          <div class="col  p-0 ">       </div>
-          <div class="col  p-0 ">       </div>
+          <div class="col  p-0 " id="g1Fives">       </div>
+          <div class="col  p-0 " id="g2Fives">       </div>
+          <div class="col  p-0 " id="g3Fives">       </div>
+          <div class="col  p-0 " id="g4Fives">       </div>
+          <div class="col  p-0 " id="g5Fives">       </div>
+          <div class="col  p-0 " id="g6Fives">       </div>
         </div>
         <div class="d-flex flex-row justify-content-around bg-white">
           <div class="col  p-0 ">Sixes</div>
           <div class="col  p-0 ">Count and add only Sixes</div>
-          <div class="col  p-0 ">       </div>
-          <div class="col  p-0 ">       </div>
-          <div class="col  p-0 ">       </div>
-          <div class="col  p-0 ">       </div>
-          <div class="col  p-0 ">       </div>
-          <div class="col  p-0 ">       </div>
+          <div class="col  p-0 "  id="g1Sixes">       </div>
+          <div class="col  p-0 "  id="g2Sixes">       </div>
+          <div class="col  p-0 "  id="g3Sixes">       </div>
+          <div class="col  p-0 "  id="g4Sixes">       </div>
+          <div class="col  p-0 "  id="g5Sixes">       </div>
+          <div class="col  p-0 "  id="g6Sixes">       </div>
         </div>
         <div class="d-flex flex-row justify-content-around bg-white">
           <div class="col  p-0 ">Total SCORE</div>
           <div class="col  p-0 ">---></div>
-          <div class="col  p-0 ">       </div>
-          <div class="col  p-0 ">       </div>
-          <div class="col  p-0 ">       </div>
-          <div class="col  p-0 ">       </div>
-          <div class="col  p-0 ">       </div>
-          <div class="col  p-0 ">       </div>
+          <div class="col  p-0 " id="g1Ts">       </div>
+          <div class="col  p-0 " id="g2Ts">       </div>
+          <div class="col  p-0 " id="g3Ts">       </div>
+          <div class="col  p-0 " id="g4Ts">       </div>
+          <div class="col  p-0 " id="g5Ts">       </div>
+          <div class="col  p-0 " id="g6Ts">       </div>
         </div>
         <div class="d-flex flex-row justify-content-around bg-white">
           <div class="col  p-0 ">BONUS If total score is 63 or over</div>
           <div class="col  p-0 ">SCORE: 35</div>
-          <div class="col  p-0 ">       </div>
-          <div class="col  p-0 ">       </div>
-          <div class="col  p-0 ">       </div>
-          <div class="col  p-0 ">       </div>
-          <div class="col  p-0 ">       </div>
-          <div class="col  p-0 ">       </div>
+          <div class="col  p-0 " id="g1Bs">       </div>
+          <div class="col  p-0 " id="g2Bs">       </div>
+          <div class="col  p-0 " id="g3Bs">       </div>
+          <div class="col  p-0 " id="g4Bs">       </div>
+          <div class="col  p-0 " id="g5Bs">       </div>
+          <div class="col  p-0 " id="g6Bs">       </div>
         </div>
         <div class="d-flex flex-row justify-content-around bg-white">
           <div class="col  p-0 ">TOTAL Of Upper Section</div>
           <div class="col  p-0 ">---></div>
-          <div class="col  p-0 ">       </div>
-          <div class="col  p-0 ">       </div>
-          <div class="col  p-0 ">       </div>
-          <div class="col  p-0 ">       </div>
-          <div class="col  p-0 ">       </div>
-          <div class="col  p-0 ">       </div>
+          <div class="col  p-0 " id="g1TUS">       </div>
+          <div class="col  p-0 " id="g2TUS">       </div>
+          <div class="col  p-0 " id="g3TUS">       </div>
+          <div class="col  p-0 " id="g4TUS">       </div>
+          <div class="col  p-0 " id="g5TUS">       </div>
+          <div class="col  p-0 " id="g6TUS">       </div>
         </div>
         <div class="d-flex flex-row justify-content-around bg-white">
           <div class="col border-0 p-0 ">LOWER SECTION</div>
@@ -132,6 +132,96 @@
           <div class="col border-0 p-0 ">       </div>
           <div class="col border-0 p-0 ">       </div>
           <div class="col border-0 p-0 ">       </div>
+        </div>
+        <div class="d-flex flex-row justify-content-around bg-white">
+          <div class="col  p-0 ">3 of a kind</div>
+          <div class="col  p-0 ">Add Total Of All Dice</div>
+          <div class="col  p-0 " id="g13K">       </div>
+          <div class="col  p-0 " id="g23K">       </div>
+          <div class="col  p-0 " id="g33K">       </div>
+          <div class="col  p-0 " id="g43K">       </div>
+          <div class="col  p-0 " id="g53K">       </div>
+          <div class="col  p-0 " id="g63K">       </div>
+        </div>
+        <div class="d-flex flex-row justify-content-around bg-white">
+          <div class="col  p-0 ">4 of a kind</div>
+          <div class="col  p-0 ">Add Total Of All Dice</div>
+          <div class="col  p-0 " id="g14K">       </div>
+          <div class="col  p-0 " id="g24K">       </div>
+          <div class="col  p-0 " id="g34K">       </div>
+          <div class="col  p-0 " id="g44K">       </div>
+          <div class="col  p-0 " id="g54K">       </div>
+          <div class="col  p-0 " id="g64K">       </div>
+        </div>
+        <div class="d-flex flex-row justify-content-around bg-white">
+          <div class="col  p-0 ">Full House</div>
+          <div class="col  p-0 ">SCORE 25</div>
+          <div class="col  p-0 " id="g1Fh">       </div>
+          <div class="col  p-0 " id="g2Fh">       </div>
+          <div class="col  p-0 " id="g3Fh">       </div>
+          <div class="col  p-0 " id="g4Fh">       </div>
+          <div class="col  p-0 " id="g5Fh">       </div>
+          <div class="col  p-0 " id="g6Fh">       </div>
+        </div>
+        <div class="d-flex flex-row justify-content-around bg-white">
+          <div class="col  p-0 ">Sm. Straight Sequence of 4</div>
+          <div class="col  p-0 ">SCORE 30</div>
+          <div class="col  p-0 " id="g1Ss">       </div>
+          <div class="col  p-0 " id="g2Ss">       </div>
+          <div class="col  p-0 " id="g3Ss">       </div>
+          <div class="col  p-0 " id="g4Ss">       </div>
+          <div class="col  p-0 " id="g5Ss">       </div>
+          <div class="col  p-0 " id="g6Ss">       </div>
+        </div>
+        <div class="d-flex flex-row justify-content-around bg-white">
+          <div class="col  p-0 ">Lg. Straight Sequence of 5</div>
+          <div class="col  p-0 ">SCORE 40</div>
+          <div class="col  p-0 " id="g1Ls">       </div>
+          <div class="col  p-0 " id="g2Ls">       </div>
+          <div class="col  p-0 " id="g3Ls">       </div>
+          <div class="col  p-0 " id="g4Ls">       </div>
+          <div class="col  p-0 " id="g5Ls">       </div>
+          <div class="col  p-0 " id="g6Ls">       </div>
+        </div>
+        <div class="d-flex flex-row justify-content-around bg-white">
+          <div class="col  p-0 ">Yahtzee 5 of a kind</div>
+          <div class="col  p-0 ">SCORE 50</div>
+          <div class="col  p-0 " id="g1Y">       </div>
+          <div class="col  p-0 " id="g2Y">       </div>
+          <div class="col  p-0 " id="g3Y">       </div>
+          <div class="col  p-0 " id="g4Y">       </div>
+          <div class="col  p-0 " id="g5Y">       </div>
+          <div class="col  p-0 " id="g6Y">       </div>
+        </div>
+        <div class="d-flex flex-row justify-content-around bg-white">
+          <div class="col  p-0 ">Chance</div>
+          <div class="col  p-0 ">Score Total Of All 5 Dice</div>
+          <div class="col  p-0 " id="g1Td">       </div>
+          <div class="col  p-0 " id="g2Td">       </div>
+          <div class="col  p-0 " id="g3Td">       </div>
+          <div class="col  p-0 " id="g4Td">       </div>
+          <div class="col  p-0 " id="g5Td">       </div>
+          <div class="col  p-0 " id="g6Td">       </div>
+        </div>
+        <div class="d-flex flex-row justify-content-around bg-white">
+          <div class="col align-items-baseline p-0 bonusArea">YAHTZEE BONUS</div>
+          <div class="col  p-0 "><i class="fa fa-check"></i>FOR EACH BONUS </div>
+          <div class="col  p-0 ">       </div>
+          <div class="col  p-0 ">       </div>
+          <div class="col  p-0 ">       </div>
+          <div class="col  p-0 ">       </div>
+          <div class="col  p-0 ">       </div>
+          <div class="col  p-0 ">       </div>
+        </div>
+        <div class="d-flex flex-row justify-content-around bg-white">
+          <div class="col  p-0 bonusarea"></div>
+          <div class="col  p-0 ">SCORE 100 PER <i class="fa fa-check"></i></div>
+          <div class="col  p-0 ">       </div>
+          <div class="col  p-0 ">       </div>
+          <div class="col  p-0 ">       </div>
+          <div class="col  p-0 ">       </div>
+          <div class="col  p-0 ">       </div>
+          <div class="col  p-0 ">       </div>
         </div>
       </div>
     </main>
