@@ -1,0 +1,71 @@
+body {
+    background-image: url(https://images.pexels.com/photos/1235706/pexels-photo-1235706.jpeg?cs=srgb&dl=pexels-lood-goosen-1235706.jpg&fm=jpg);
+    background-size: cover;
+    color: white;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 5px 10px;
+}
+
+#coffees {
+    display: flex;
+    flex-direction: column;
+}
+
+.jumbotron {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.container {
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#coffees {
+    display: flex;
+}
+
+ul{
+    list-style: none;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+
+}
+
+ul>li {
+    color: white;
+}
+
+#myInput {
+    display: flex;
+    align-items: flex-end;
+    width: 10em;
+}
+.eachCoffee {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 2em;
+    padding: 2em;
+    background-color: rgba(0,0,0, .3);
+}
+
+.display-4 {
+    margin: 0 1em;
+}
+
+p {
+    margin:0;
+}
