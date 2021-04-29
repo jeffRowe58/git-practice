@@ -1,4 +1,11 @@
 "use strict";
+// Dice pictures
+var one = document.getElementById("oneDice");
+var two = document.getElementById("twoDice");
+var three = document.getElementById("threeDice");
+var four = document.getElementById("fourDice");
+var five = document.getElementById("fiveDice");
+
     // Getting player names
     var playerNumber = parseInt(prompt("How many Player?"))
 
@@ -14,6 +21,25 @@
 if(playerNumber > 1){
    var cardTwo = document.getElementById("player2").style["display"] = "block";
 }
+var diceArray = [];
+var diceRoleCounter = 0;
+function initRoll(){
+    for(var i = 0; i <= 4; i++){
+        var firstRoll = Math.floor(Math.random() * (7-1) + 1)
+        diceArray.push(firstRoll);
+    }
+    diceRoleCounter++;
+}
+
+
+var roundAnnounce = confirm("Round 1, ready to roll");
+if (roundAnnounce === true){
+    initRoll();
+}
+confirm("Your roll was " + diceArray);
+
+
+
     //Gathering Scores
 // var ArrayTop = function() {
 //     var game1ones = parseInt(document.getElementById('g1Ones').innerHTML);

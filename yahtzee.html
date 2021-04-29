@@ -439,18 +439,15 @@
       </div>
     </main>
 
+      <img src="img/oneDice.png" class="die" id="oneDice" alt="oneDice">
+      <img src="img/twoDice.png" class="die" id="twoDice" alt="twoDice">
+      <img src="img/threeDice.png" class="die" id="threeDice" alt="threeDice">
+      <img src="img/fourDice.png" class="die" id="fourDice" alt="fourDice">
+      <img src="img/fiveDice.png" class="die" id="fiveDice" alt="fiveDice">
+
     <script src="js/yahtzee.js"></script>
   <script>
-    var diceArray = [];
-    var diceRoleCounter = 0;
-    function initRoll(){
-      for(var i = 0; i <= 4; i++){
-        var firstRoll = Math.floor(Math.random() * (7-1) + 1)
-        diceArray.push(firstRoll);
-      }
-      diceRoleCounter = diceRoleCounter + 1;
-    }
-    initRoll();
+
 
     console.log(diceArray);
     var game1ones = parseInt(document.getElementById('g1Ones').innerHTML);
