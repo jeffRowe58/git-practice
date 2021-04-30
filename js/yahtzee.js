@@ -5,22 +5,24 @@ var two = document.getElementById("twoDice");
 var three = document.getElementById("threeDice");
 var four = document.getElementById("fourDice");
 var five = document.getElementById("fiveDice");
+var six = document.getElementById("sixDice");
 
     // Getting player names
-    var playerNumber = parseInt(prompt("How many Player?"))
+//     var playerNumber = parseInt(prompt("How many Player?"))
+//
+//     var playerNames = [];
+//
+//     // Placing Player names
+//     while (playerNames.length < playerNumber) {
+//         playerNames.push(prompt("Player Name"));
+//     }
+//     document.getElementById("name1").value = playerNames[0];
+//     document.getElementById("name2").value = playerNames[1];
+//
+// if(playerNumber > 1) {
+//     var cardTwo = document.getElementById("player2").style["display"] = "block";
+// }
 
-    var playerNames = [];
-
-    // Placing Player names
-    while (playerNames.length < playerNumber) {
-        playerNames.push(prompt("Player Name"));
-    }
-    document.getElementById("name1").value = playerNames[0];
-    document.getElementById("name2").value = playerNames[1];
-
-if(playerNumber > 1){
-   var cardTwo = document.getElementById("player2").style["display"] = "block";
-}
 var diceArray = [];
 var diceRoleCounter = 0;
 function initRoll(){
@@ -30,13 +32,34 @@ function initRoll(){
     }
     diceRoleCounter++;
 }
-
+var dicePic = [];
+for(var i = 0; i < diceArray.length; i++) {
+    if (diceArray[i] === 1) {
+        var uno = one;
+        dicePic.push(uno)
+    } else if (diceArray[i] === 2) {
+        var dos = two;
+        dicePic.push(dos)
+    } else if (diceArray[i] === 3) {
+        var tres = three;
+        dicePic.push(tres)
+    } else if (diceArray[i] === 4) {
+        var quatro = four;
+        dicePic.push(quatro)
+    } else if (diceArray[i] === 5) {
+        var cinco = five;
+        dicePic.push(cinco)
+    } else {
+        var seis = six;
+        dicePic.push(seis)
+    }
+}
 
 var roundAnnounce = confirm("Round 1, ready to roll");
 if (roundAnnounce === true){
     initRoll();
 }
-confirm("Your roll was " + diceArray);
+
 
 
 

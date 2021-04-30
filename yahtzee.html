@@ -3,7 +3,9 @@
   <head>
       <meta charset="UTF-8">
       <title>Yahtzee</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="bootstrap-4.6.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap-4.6.0-dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="bootstrap-4.6.0-dist/css/bootstrap-reboot.min.css">
     <script src="https://kit.fontawesome.com/6a7da1b2ca.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/yahtzee.css">
   </head>
@@ -437,15 +439,30 @@
           </div>
         </div>
       </div>
+      <div class="container">
+        <div class="card bg-transparent border-0">
+          <div class="card-body  border-0">
+            <form>
+              <label for="snakeEyes" class="die border-0"><img src="img/oneDice.png" class="die" alt="oneDice" id="oneDice"></label>
+              <input type="checkbox" name="die" class="die" id="snakeEyes">
+              <label for="deus" class="die border-0"><img src="img/twoDice.png" class="die" alt="twoDice" id="twoDice"></label>
+              <input type="checkbox" name="die" class="die" id="deus">
+              <label for="triple" class="die border-0"><img src="img/threeDice.png" class="die" alt="oneDice" id="threeDice"></label>
+              <input type="checkbox" name="die" class="die" id="triple">
+              <label for="four" class="die border-0"><img src="img/fourDice.png" class="die" alt="oneDice" id="fourDice"></label>
+              <input type="checkbox" name="die" class="die" id="four">
+              <label for="five" class="die border-0"><img src="img/fiveDice.png" class="die" alt="oneDice" id="fiveDice"></label>
+              <input type="checkbox" name="die" class="die" id="five">
+              <label for="six" class="die border-0"><img src="img/sixDice.png" class="die" alt="oneDice" id="sixDice"></label>
+              <input type="checkbox" name="die" class="die" id="six">
+            </form>
+          </div>
+        </div>
+      </div>
     </main>
 
-      <img src="img/oneDice.png" class="die" id="oneDice" alt="oneDice">
-      <img src="img/twoDice.png" class="die" id="twoDice" alt="twoDice">
-      <img src="img/threeDice.png" class="die" id="threeDice" alt="threeDice">
-      <img src="img/fourDice.png" class="die" id="fourDice" alt="fourDice">
-      <img src="img/fiveDice.png" class="die" id="fiveDice" alt="fiveDice">
-
     <script src="js/yahtzee.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
   <script>
 
 
