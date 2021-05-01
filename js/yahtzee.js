@@ -1,11 +1,39 @@
 "use strict";
-// Dice pictures
-var one = document.getElementById("oneDice");
-var two = document.getElementById("twoDice");
-var three = document.getElementById("threeDice");
-var four = document.getElementById("fourDice");
-var five = document.getElementById("fiveDice");
-var six = document.getElementById("sixDice");
+
+function renderDice(){
+var html = '<div class="container">';
+html += '<div class="card bg-transparent border-0">';
+html += '<div class="card-body  border-0">';
+html += '<form>';
+html += '<label for="snakeEyes" class="die border-0"><img src="img/oneDice.png" class="die" alt="oneDice" id="oneDice"></label>';
+html += '<input type="checkbox" name="die" class="die" id="snakeEyes">';
+html += '</form>';
+html += '</div>';
+}
+
+var diceArray = [];
+var diceRoleCounter = 0;
+function initRoll(){
+    for(var i = 0; i <= 4; i++){
+        var firstRoll = Math.floor(Math.random() * (7-1) + 1)
+        diceArray.push(firstRoll);
+    }
+    diceRoleCounter++;
+}
+var roundAnnounce = confirm("Round 1, ready to roll");
+if (roundAnnounce === true) {
+    initRoll();
+}
+var diceObject = [
+    {id: "oneDice", class:"die", src: "img/oneDice.png"},
+    {id: "twoDice", class:"die", src: "img/twoDice.png"},
+    {id: "threeDice", class: "die", src: "img/threeDice.png"},
+    {id: "fourDice", class: "die", src: "img/fourDice.png"},
+    {id: "fiveDice", class: "die", src: "img/fiveDice.png"},
+    {id: "sixDice", class: "die", src: "img/sixDice.png"},
+
+];
+
 
     // Getting player names
 //     var playerNumber = parseInt(prompt("How many Player?"))
@@ -22,45 +50,6 @@ var six = document.getElementById("sixDice");
 // if(playerNumber > 1) {
 //     var cardTwo = document.getElementById("player2").style["display"] = "block";
 // }
-
-var diceArray = [];
-var diceRoleCounter = 0;
-function initRoll(){
-    for(var i = 0; i <= 4; i++){
-        var firstRoll = Math.floor(Math.random() * (7-1) + 1)
-        diceArray.push(firstRoll);
-    }
-    diceRoleCounter++;
-}
-var dicePic = [];
-for(var i = 0; i < diceArray.length; i++) {
-    if (diceArray[i] === 1) {
-        var uno = one;
-        dicePic.push(uno)
-    } else if (diceArray[i] === 2) {
-        var dos = two;
-        dicePic.push(dos)
-    } else if (diceArray[i] === 3) {
-        var tres = three;
-        dicePic.push(tres)
-    } else if (diceArray[i] === 4) {
-        var quatro = four;
-        dicePic.push(quatro)
-    } else if (diceArray[i] === 5) {
-        var cinco = five;
-        dicePic.push(cinco)
-    } else {
-        var seis = six;
-        dicePic.push(seis)
-    }
-}
-
-var roundAnnounce = confirm("Round 1, ready to roll");
-if (roundAnnounce === true){
-    initRoll();
-}
-
-
 
 
     //Gathering Scores
