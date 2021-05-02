@@ -1,14 +1,22 @@
 "use strict";
 
-function renderDice(){
+function renderDice(die){
 var html = '<div class="container">';
 html += '<div class="card bg-transparent border-0">';
 html += '<div class="card-body  border-0">';
 html += '<form>';
-html += '<label for="snakeEyes" class="die border-0"><img src="img/oneDice.png" class="die" alt="oneDice" id="oneDice"></label>';
-html += '<input type="checkbox" name="die" class="die" id="snakeEyes">';
+html += '<label for="diceObject.id" class="die border-0"><img src="diceObject.src" class="die" alt="diceObject.id" id="diceObject.id"></label>';
+html += '<input type="checkbox" name="die" class="die" id="diceObject.id">';
 html += '</form>';
 html += '</div>';
+return html;
+}
+function renderDie(diceObject) {
+    var html = '';
+    for(var i = 0; i < diceObject.length; i++) {
+        html += renderDice(diceObject[i]);
+    }
+    return html;
 }
 
 var diceArray = [];
@@ -25,12 +33,12 @@ if (roundAnnounce === true) {
     initRoll();
 }
 var diceObject = [
-    {id: "oneDice", class:"die", src: "img/oneDice.png"},
-    {id: "twoDice", class:"die", src: "img/twoDice.png"},
-    {id: "threeDice", class: "die", src: "img/threeDice.png"},
-    {id: "fourDice", class: "die", src: "img/fourDice.png"},
-    {id: "fiveDice", class: "die", src: "img/fiveDice.png"},
-    {id: "sixDice", class: "die", src: "img/sixDice.png"},
+    {id: "oneDice", src: "img/oneDice.png"},
+    {id: "twoDice", src: "img/twoDice.png"},
+    {id: "threeDice", src: "img/threeDice.png"},
+    {id: "fourDice", src: "img/fourDice.png"},
+    {id: "fiveDice", src: "img/fiveDice.png"},
+    {id: "sixDice", src: "img/sixDice.png"},
 
 ];
 
@@ -81,3 +89,5 @@ var diceObject = [
 // };
 // tallyTop();
 
+var body = document.getElementById("body")
+body.innerHTML = renderDice(diceObject);
