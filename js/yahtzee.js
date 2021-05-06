@@ -1,5 +1,5 @@
 "use strict";
-
+// Dice object
 let diceObject = [
     {
         value: 1,
@@ -34,9 +34,9 @@ var playerName = prompt("What is your name?")
 document.getElementById("name1").value = playerName;
 
 
-
+// initial roll and setting array and roll counter call for render
 var diceArray = [];
-var diceRoleCounter = 0;
+var diceRoleCounter = 1;
 function initRoll(){
     for(var i = 0; i <= 4; i++){
         var firstRoll = Math.floor(Math.random() * (7-1) + 1);
@@ -45,7 +45,7 @@ function initRoll(){
     diceRoleCounter++;
     render();
 }
-
+// Setup of the second roll and disable roll button on third turn
 let nextRoll = [];
 function reRoll(x) {
     if(diceRoleCounter === 3){
@@ -58,17 +58,18 @@ function reRoll(x) {
         diceRoleCounter++;
     }
 }
+// Setting confirm and calling initial roll, need to see where it can move. Top errored out due to early call of initRoll
 var roundAnnounce = confirm("Round 1, ready to roll");
 if (roundAnnounce === true) {
     initRoll();
 }
-
+// Assigns dice images to slots
 function render(){
     for(var i = 0; i < diceArray.length; i++){
         $("#slot"+[i + 1]).attr('src', diceObject[(diceArray[i]-1)].pic);
     }
 }
-
+// Possibly don't need indexOfReroll anymore, identifies dice selected by user and pushes to array, and calls translate
 var indexOfReroll = [];
 var selected = [];
 function selectedList (){
@@ -80,6 +81,7 @@ function selectedList (){
     }
     translate(selected);
 }
+// Iterates through the selected and pushes those that were. Sorts the numbers. Pushes number of rerolls and calls swap.
 var keptDice = [];
 var rere =[];
 
@@ -92,25 +94,26 @@ function translate(x){
     keptDice.sort();
     rere.push(5 - (keptDice.length));
     reRoll(rere);
-    // swap1(indexOfReroll);
     swap();
 }
-
+// First swaps dice images and checks to the front and then renders the newly rolled dice. Lastly clears array for new array
 function swap(){
     for(var i = 0; i < keptDice.length; i++){
         $("#slot"+[i + 1]).attr('src', diceObject[(keptDice[i]-1)].pic);
         $("#die"+ [i + 1]).prop('checked', true);
     }
-    for(var j = (keptDice.length); j < 5; j++){
-        $("#slot"+[j + 1]).attr('src', diceObject[(nextRoll[i]-1)].pic);
-        $("#die"+[j + 1]).prop('checked', false);
+    console.log(i);
+    for(var j = (keptDice.length); j < 5; j++) {
+            $("#slot" + [j + 1]).attr('src', diceObject[(nextRoll[(j-keptDice.length)] - 1)].pic);
+            $("#die" + [j + 1]).prop('checked', false);
+            console.log(j);
     }
+    diceArray = keptDice.concat(nextRoll);
+    console.log(diceArray);
+    keptDice = [];
+    selected = [];
+    rere=[];
 }
-// function swap1(x) {
-//     for (var i = 0; i < x.length; i++) {
-//         $("#slot" + x[i]).attr('src', diceObject[(nextRoll[i] - 1)].pic);
-//     }
-// }
-
+//Resolve why arrays stay blank
 // need to figure out how to setup third roll
 
