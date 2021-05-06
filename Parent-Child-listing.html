@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <title>Parent/Child List</title>
+  </head>
+  <body>
+    <div id="first"></div>
+    <div id="second"></div>
+    <ul>
+      <li>This</li>
+      <li>is</li>
+      <li>a</li>
+      <li>test</li>
+    </ul>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+      var array = [];
+      var bodyChildren = $('body').children();
+      for(var i = 0; i < 5; i++){
+        array.push(bodyChildren[i])
+        console.log(array[i]);
+      }
+      var show = array.join(",");
+      console.log(show);
+      let regEx = /\[object html\gi;
+      let replaceW = '';
+      document.getElementById('first').innerHTML = show.replace(regEx,replaceW);
+    </script>
+  </body>
+</html>

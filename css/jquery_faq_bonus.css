@@ -1,0 +1,22 @@
+.container{
+    flex-wrap: wrap;
+    overflow: auto;
+    justify-content: space-evenly;
+}
+.picRotate{
+    height: 350px;
+    width: 250px;
+    display: flex;
+    border: 20px solid;
+    padding: 10px;
+}
+
+.border1{
+    border-color: burlywood;
+}
+.border2{
+    border-color: cornsilk;
+}
+.border3{
+    border-color: saddlebrown;
+}

@@ -29,5 +29,7 @@ body{
     width: 25px;
     height: 25px;
     border: 2px solid black;
-    display: none;
+}
+button{
+    width: 150px;
 }
