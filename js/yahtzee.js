@@ -54,6 +54,7 @@ function reRoll(x) {
         for (var i = 0; i < x; i++) {
             var roll = Math.floor(Math.random() * (7 - 1) + 1);
             nextRoll.push(roll);
+            console.log(nextRoll);
         }
         diceRoleCounter++;
     }
@@ -79,6 +80,7 @@ function selectedList (){
             indexOfReroll.push(i);
         }
     }
+    console.log(selected);
     translate(selected);
 }
 // Iterates through the selected and pushes those that were. Sorts the numbers. Pushes number of rerolls and calls swap.
@@ -93,9 +95,12 @@ function translate(x){
         }
     keptDice.sort();
     rere.push(5 - (keptDice.length));
-    reRoll(rere);
+    console.log(rere);
+    reRoll(rere)
     swap();
+
 }
+
 // First swaps dice images and checks to the front and then renders the newly rolled dice. Lastly clears array for new array
 function swap(){
     for(var i = 0; i < keptDice.length; i++){
@@ -110,10 +115,86 @@ function swap(){
     }
     diceArray = keptDice.concat(nextRoll);
     console.log(diceArray);
-    keptDice = [];
-    selected = [];
-    rere=[];
+    keptDice.length = 0;
+    selected.length = 0;
+    rere.length = 0;
+    nextRoll.length = 0;
 }
+if(diceRoleCounter === 3){
+    $("#die"+/[1-5]/).click(selectedList);
+}
+$('#g1Ones').click(function (){
+    $('#postRoll').prop('disabled', false);
+    var counter = 0
+    for(var i = 0; i < diceArray.length; i++){
+        if (diceArray[i] === 1) {
+            counter++
+        }
+    }
+    $('#postRoll').click(function (){
+        document.getElementById('g1Ones').innerHTML = counter * 1;
+    });
+});
+$('#g1Twos').click(function (){
+    $('#postRoll').prop('disabled', false);
+    var counter = 0
+    for(var i = 0; i < diceArray.length; i++){
+        if (diceArray[i] === 2) {
+            counter++
+        }
+    }
+    $('#postRoll').click(function (){
+        document.getElementById('g1Twos').innerHTML = counter * 2;
+    });
+});
+$('#g1Threes').click(function (){
+    $('#postRoll').prop('disabled', false);
+    var counter = 0
+    for(var i = 0; i < diceArray.length; i++){
+        if (diceArray[i] === 3) {
+            counter++
+        }
+    }
+    $('#postRoll').click(function (){
+        document.getElementById('g1Threes').innerHTML = counter * 3;
+    });
+});
+$('#g1Fours').click(function (){
+    $('#postRoll').prop('disabled', false);
+    var counter = 0
+    for(var i = 0; i < diceArray.length; i++){
+        if (diceArray[i] === 4) {
+            counter++
+        }
+    }
+    $('#postRoll').click(function (){
+        document.getElementById('g1Fours').innerHTML = counter * 4;
+    });
+});
+$('#g1Fives').click(function (){
+    $('#postRoll').prop('disabled', false);
+    var counter = 0
+    for(var i = 0; i < diceArray.length; i++){
+        if (diceArray[i] === 5) {
+            counter++
+        }
+    }
+    $('#postRoll').click(function (){
+        document.getElementById('g1Fives').innerHTML = counter * 5;
+    });
+});
+$('#g1Sixes').click(function (){
+    $('#postRoll').prop('disabled', false);
+    var counter = 0
+    for(var i = 0; i < diceArray.length; i++){
+        if (diceArray[i] === 6) {
+            counter++
+        }
+    }
+    $('#postRoll').click(function (){
+        document.getElementById('g1Sixes').innerHTML = counter * 6;
+    });
+});
 //Resolve why arrays stay blank
 // need to figure out how to setup third roll
 
