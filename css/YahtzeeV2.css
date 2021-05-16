@@ -3,6 +3,7 @@ td{
     border-collapse: collapse;
     margin: 0;
     padding: 0;
+    color: black;
 }
 tr{
     border-collapse: collapse;
@@ -11,4 +12,18 @@ tr{
 table{
     border-collapse: collapse;
     margin: 0;
+}
+#html{
+    background-color: #e56060;
+    width: 950px;
+}
+form{
+    width: 950px;
+}
+.button{
+    width: 950px;
+}
+img{
+    width: 100px;
+    height: 100px;
 }

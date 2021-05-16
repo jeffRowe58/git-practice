@@ -3,12 +3,33 @@
     <head>
         <meta charset="UTF-8">
         <title>YahtzeeV2</title>
-        <link rel="stylesheet" href="bootstrap-4.6.0-dist">
+        <link rel="stylesheet" href="bootstrap-4.6.0-dist/css/bootstrap.css">
         <script src="https://kit.fontawesome.com/6a7da1b2ca.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="css/YahtzeeV2.css">
     </head>
     <body>
-        <div id="html"></div>
+    <h1 class="text-center">Yahtzee a Game and a Project</h1>
+        <div class="m-auto" id="html"></div>
+        <div class="col p-0 border-0 button m-auto">
+            <h3 class="text-center">Roll Sheet</h3>
+            <form class="container bg-white d-flex flex-row justify-content-between">
+                <label for="die1" class="m-0"><img src="" class="die" id="slot1"></label>
+                <input type="checkbox" class="dieInput" id="die1" name="one">
+                <label for="die2" class="m-0"><img src="" class="die" id="slot2"></label>
+                <input type="checkbox" class="dieInput" id="die2" name="two">
+                <label for="die3" class="m-0"><img src="" class="die" id="slot3"></label>
+                <input type="checkbox" class="dieInput" id="die3" name="three">
+                <label for="die4" class="m-0"><img src="" class="die" id="slot4"></label>
+                <input type="checkbox" class="dieInput" id="die4" name="four">
+                <label for="die5" class="m-0"><img src="" class="die" id="slot5"></label>
+                <input type="checkbox" class="dieInput" id="die5" name="five">
+            </form>
+            <div class=" button container d-flex flex-row justify-content-between mt-3">
+                <button type="button" onclick="userPress()" id="rollButton" class="d-flex justify-content-center">Roll Again</button>
+                <button type="button" onclick="getSelected()" id="lock">Lock Selected</button>
+                <button type="button" id="postRoll" class="d-flex justify-content-center" disabled>Post Score</button>
+            </div>
+        </div>
 
         <script src="js/jquery-3.6.0.min.js"></script>
         <script src="js/YahtzeeV2.js"></script>
