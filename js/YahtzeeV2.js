@@ -98,13 +98,13 @@ var html = "<table class='container m-0 p-0'>";
     html += `<td id="g6TUS"></td>`;
     html += `</tr>`;
     html += `<td>LOWER SECTION</td>`;
-    html += `<td id="Ls"></td>`;
-    html += `<td id="g1Ls"></td>`;
-    html += `<td id="g2Ls"></td>`;
-    html += `<td id="g3Ls"></td>`;
-    html += `<td id="g4Ls"></td>`;
-    html += `<td id="g5Ls"></td>`;
-    html += `<td id="g6Ls"></td>`;
+    html += `<td id="LS"></td>`;
+    html += `<td id="g1LS"></td>`;
+    html += `<td id="g2LS"></td>`;
+    html += `<td id="g3LS"></td>`;
+    html += `<td id="g4LS"></td>`;
+    html += `<td id="g5LS"></td>`;
+    html += `<td id="g6LS"></td>`;
     html += `</tr>`;
     html += `<td>3 of a kind</td>`;
     html += `<td>Add Total of All Dice</td>`;
@@ -198,12 +198,12 @@ var html = "<table class='container m-0 p-0'>";
     html += `</tr>`;
     html += `<td>Total of UPPER SECTION</td>`;
     html += `<td>---></td>`;
-    html += `<td class="g1TUS"></td>`;
-    html += `<td class="g2TUS"></td>`;
-    html += `<td class="g3TUS"></td>`;
-    html += `<td class="g4TUS"></td>`;
-    html += `<td class="g5TUS"></td>`;
-    html += `<td class="g6TUS"></td>`;
+    html += `<td id="g1TUSB"></td>`;
+    html += `<td id="g2TUSB"></td>`;
+    html += `<td id="g3TUSB"></td>`;
+    html += `<td id="g4TUSB"></td>`;
+    html += `<td id="g5TUSB"></td>`;
+    html += `<td id="g6TUSB"></td>`;
     html += `</tr>`;
     html += `<td>Grand Total</td>`;
     html += `<td>---></td>`;
@@ -229,19 +229,10 @@ var diceImages = [
     {die: "img/dice6.jpg"}
 ];
 
-var games = [
-    {game1:{
-        g1Ones: "dice[i] === 1",
-        g1Twos: "dice[i] === 2",
-        g1Threes: "dice[i] === 3",
-        g1Fours: "dice[i] === 4",
-        g1Fives: "dice[i] === 5",
-        g1Sixes: "dice[i] === 6",
-}}
-]
 
     // Start round
-
+var turnCount = 1;
+console.log(turnCount);
 var rollCount = 0;
 
     $(document).ready(function (){
@@ -307,12 +298,9 @@ function swap(){
         $("#slot"+[i + 1]).attr('src', diceImages[(keptDice[i]-1)].die);
         $("#die"+ [i + 1]).prop('checked', false);
     }
-    console.log(i);
     for(var j = (keptDice.length); j < 5; j++) {
-        console.log(newDie);
         $("#slot" + [j + 1]).attr('src', diceImages[(newDie[(j-keptDice.length)] - 1)].die);
         $("#die" + [j + 1]).prop('checked', false);
-        console.log(j);
     }
     if(rollCount === 3) {
         $('#rollButton').prop('disabled', true);
@@ -321,7 +309,6 @@ function swap(){
     }
     $('form').children().prop('checked', false);
     dice = keptDice.concat(newDie);
-    console.log(dice);
     keptDice.length = [];
     selected.length = [];
     diceToReroll.length = [];
@@ -330,21 +317,20 @@ function swap(){
 
 $('td').click(function (){
     var check = $(this).html();
-    var secondCheck = $(this).attr('id')
-    if(check !== "" || secondCheck === "g13K" || secondCheck === "g14K" || secondCheck === 'g1Fh' || secondCheck === "g1Ss" || secondCheck === 'g1Ls' || secondCheck === 'g1Y' || secondCheck === 'g1C') {
+    var secondCheck = $(this).attr('id');
+    var counts = {};
+    var count = 0;
+    var destination = $(this).attr('id');
+    if(check !== "") {
         return false;
-    }else if(check === ""){
+    }else if(check === "" && secondCheck === 'g1Ones' || secondCheck === 'g1Twos' || secondCheck === 'g1Threes' || secondCheck === 'g1Fours' || secondCheck === 'g1Fives' || secondCheck === 'g1Sixes'){
         $('#postRoll').prop('disabled', false);
-        var count = 0;
-        var rule = $(this).attr('id');
         for(var i = 0; i < dice.length; i++){
             if((parseInt($(this).attr('value'))) === dice[i]){
                 count++;
-                console.log(count);
             }
-            var convert = "#" + rule;
             $('#postRoll').click(function (){
-                var please = document.getElementById(rule).innerHTML = count * (parseInt(document.getElementById(rule).getAttribute('value')));
+                var please = document.getElementById(destination).innerHTML = count * (parseInt(document.getElementById(destination).getAttribute('value')));
                 dice = [];
                 rollCount = 0;
                 keptDice = [];
@@ -355,26 +341,274 @@ $('td').click(function (){
                 $('#lock').prop('disabled', false);
                 firstRoll();
                 addTop();
+
             });
 
         }
-    }
+    } else if(check === "" && secondCheck === 'g13K' || secondCheck === 'g14K' || secondCheck === 'g1Fh' || secondCheck === 'g1Ss' || secondCheck === 'g1Ls' || secondCheck === 'g1Y' || secondCheck === 'g1C'){
+        $('#postRoll').prop('disabled', false);
+        for(let i = 0; i < dice.length; i++){
+            counts[dice[i]] = 1 + (counts[dice[i]] || 0);
+
+        }
+        if(document.getElementById(destination).getAttribute('id').toString() === 'g13K'){
+            let objCount = Object.keys(counts).length
+            for(var h = 0; h < objCount; h++){
+                if(Object.values(counts)[h] >= 3){
+                    var res = Object.keys(counts)[h] * 3;
+                    $('#postRoll').click(function (){
+                        let please = document.getElementById(destination).innerHTML = res;
+                        dice = [];
+                        rollCount = 0;
+                        keptDice = [];
+                        selected = [];
+                        diceToReroll =[];
+                        newDie = [];
+                        $('#postRoll').prop('disabled', true);
+                        $('#lock').prop('disabled', false);
+                        firstRoll();
+                        addBottom();
+
+                    });
+                }else{
+                    $('#postRoll').click(function () {
+                        let please = document.getElementById(destination).innerHTML = '0';
+                        dice = [];
+                        rollCount = 0;
+                        keptDice = [];
+                        selected = [];
+                        diceToReroll = [];
+                        newDie = [];
+                        $('#postRoll').prop('disabled', true);
+                        $('#lock').prop('disabled', false);
+                        firstRoll();
+                        addBottom();
+
+                    });
+                }
+            }
+        }else if(document.getElementById(destination).getAttribute('id').toString() === 'g14K'){
+            let objCount = Object.keys(counts).length
+            for(var j = 0; j < objCount; j++){
+                if(Object.values(counts)[j] >= 4){
+                    var res = Object.keys(counts)[j] * 4;
+                    $('#postRoll').click(function (){
+                        let please = document.getElementById(destination).innerHTML = res;
+                        dice = [];
+                        rollCount = 0;
+                        keptDice = [];
+                        selected = [];
+                        diceToReroll =[];
+                        newDie = [];
+                        $('#postRoll').prop('disabled', true);
+                        $('#lock').prop('disabled', false);
+                        firstRoll();
+                        addBottom();
+
+                    });
+                }else{
+                    $('#postRoll').click(function () {
+                        let please = document.getElementById(destination).innerHTML = '0';
+                        dice = [];
+                        rollCount = 0;
+                        keptDice = [];
+                        selected = [];
+                        diceToReroll = [];
+                        newDie = [];
+                        $('#postRoll').prop('disabled', true);
+                        $('#lock').prop('disabled', false);
+                        firstRoll();
+                        addBottom();
+
+                    });
+                }
+            }
+        }else if(document.getElementById(destination).getAttribute('id').toString() === 'g1Fh'){
+                if(Object.values(counts)[0] === 2 || Object.values(counts)[0] === 3 && Object.values(counts)[1] === 3 || Object.values(counts[1] === 2)){
+                    $('#postRoll').click(function (){
+                        let please = document.getElementById(destination).innerHTML = '25';
+                        dice = [];
+                        rollCount = 0;
+                        keptDice = [];
+                        selected = [];
+                        diceToReroll =[];
+                        newDie = [];
+                        $('#postRoll').prop('disabled', true);
+                        $('#lock').prop('disabled', false);
+                        firstRoll();
+                        addBottom();
+
+                    });
+                }else{
+                    $('#postRoll').click(function () {
+                        let please = document.getElementById(destination).innerHTML = '0';
+                        dice = [];
+                        rollCount = 0;
+                        keptDice = [];
+                        selected = [];
+                        diceToReroll = [];
+                        newDie = [];
+                        $('#postRoll').prop('disabled', true);
+                        $('#lock').prop('disabled', false);
+                        firstRoll();
+                        addBottom();
+
+                    });
+                }
+            }else if(document.getElementById(destination).getAttribute('id').toString() === 'g1Ss'){
+            let objCount = Object.keys(counts).length
+            var sSKArray = [];
+            for(var k = 0; k < 4; k++){
+                sSKArray.push(parseInt(Object.keys(counts)[k]));
+                sSKArray.sort();
+                if(JSON.stringify(sSKArray) === JSON.stringify([1, 2, 3, 4]) || JSON.stringify(sSKArray) === JSON.stringify([2, 3, 4, 5]) || JSON.stringify(sSKArray === [3, 4, 5, 6])){
+                    $('#postRoll').click(function (){
+                        let please = document.getElementById(destination).innerHTML = '30';
+                        dice = [];
+                        rollCount = 0;
+                        keptDice = [];
+                        selected = [];
+                        diceToReroll =[];
+                        newDie = [];
+                        $('#postRoll').prop('disabled', true);
+                        $('#lock').prop('disabled', false);
+                        firstRoll();
+                        addBottom();
+
+                    });
+                }else{
+                    $('#postRoll').click(function () {
+                        let please = document.getElementById(destination).innerHTML = '0';
+                        dice = [];
+                        rollCount = 0;
+                        keptDice = [];
+                        selected = [];
+                        diceToReroll = [];
+                        newDie = [];
+                        $('#postRoll').prop('disabled', true);
+                        $('#lock').prop('disabled', false);
+                        firstRoll();
+                        addBottom();
+
+                    });
+                }
+            }
+        }else if(document.getElementById(destination).getAttribute('id').toString() === 'g1Ls'){
+            let objCount = Object.keys(counts).length
+            var sSKArray = [];
+            for(var k = 0; k < 5; k++){
+                sSKArray.push(parseInt(Object.keys(counts)[k]));
+                sSKArray.sort();
+                if(JSON.stringify(sSKArray) === JSON.stringify([1, 2, 3, 4, 5]) || JSON.stringify(sSKArray) === JSON.stringify([2, 3, 4, 5, 6])){
+                    $('#postRoll').click(function (){
+                        let please = document.getElementById(destination).innerHTML = '40';
+                        dice = [];
+                        rollCount = 0;
+                        keptDice = [];
+                        selected = [];
+                        diceToReroll =[];
+                        newDie = [];
+                        $('#postRoll').prop('disabled', true);
+                        $('#lock').prop('disabled', false);
+                        firstRoll();
+                        addBottom();
+
+                    });
+                }else{
+                    $('#postRoll').click(function () {
+                        let please = document.getElementById(destination).innerHTML = '0';
+                        dice = [];
+                        rollCount = 0;
+                        keptDice = [];
+                        selected = [];
+                        diceToReroll = [];
+                        newDie = [];
+                        $('#postRoll').prop('disabled', true);
+                        $('#lock').prop('disabled', false);
+                        firstRoll();
+                        addBottom();
+
+                    });
+                }
+            }
+        }else if(document.getElementById(destination).getAttribute('id').toString() === 'g1Y'){
+            let objCount = Object.keys(counts).length
+                if(objCount === 1){
+                    if(check === "") {
+                        $('#postRoll').click(function () {
+                            let please = document.getElementById(destination).innerHTML = '50';
+                            dice = [];
+                            rollCount = 0;
+                            keptDice = [];
+                            selected = [];
+                            diceToReroll = [];
+                            newDie = [];
+                            $('#postRoll').prop('disabled', true);
+                            $('#lock').prop('disabled', false);
+                            firstRoll();
+                            addBottom();
+
+                        });
+                    }else {
+                        document.getElementById('g1YBS').innerHTML += '<i class="fa fa-check"></i>';
+                }
+            }else{
+                    $('#postRoll').click(function () {
+                        let please = document.getElementById(destination).innerHTML = '0';
+                        dice = [];
+                        rollCount = 0;
+                        keptDice = [];
+                        selected = [];
+                        diceToReroll = [];
+                        newDie = [];
+                        $('#postRoll').prop('disabled', true);
+                        $('#lock').prop('disabled', false);
+                        firstRoll();
+                        addBottom();
+
+                    });
+                }
+        }else if(document.getElementById(destination).getAttribute('id').toString() === 'g1C'){
+            let objCount = Object.keys(counts).length
+            var chanceNums = [];
+            var chanceSum;
+            for(var l = 0; l < objCount; l++){
+                chanceNums.push(parseInt(Object.keys(counts)[l]) * Object.values(counts)[l]);
+            }
+            chanceSum = chanceNums.reduce((a, b) => a + b);
+                    $('#postRoll').click(function () {
+                        let please = document.getElementById(destination).innerHTML = chanceSum;
+                        dice = [];
+                        rollCount = 0;
+                        keptDice = [];
+                        selected = [];
+                        diceToReroll = [];
+                        newDie = [];
+                        $('#postRoll').prop('disabled', true);
+                        $('#lock').prop('disabled', false);
+                        firstRoll();
+                        addBottom();
+
+                    });
+                }
+
+        }
 });
 var topArray = ['g1Ones', 'g1Twos', 'g1Threes', 'g1Fours', 'g1Fives', 'g1Sixes'];
-var sum = []
+var sum = [];
+var sumB = [];
 function addTop() {
     var nums = [];
-    ;
     for (var i = 0; i < topArray.length; i++) {
         if (document.getElementById(topArray[i]).innerHTML === '' || document.getElementById(topArray[i]).innerHTML === null) {
             nums.push(0);
         } else {
             nums.push(parseInt(document.getElementById(topArray[i]).innerHTML));
         }
-        console.log(nums);
         sum = nums.reduce((a,b) => a+b);
         $('#g1Ts').html(sum);
         upperTsWithBonus();
+
     }
 }
 function upperTsWithBonus(){
@@ -383,4 +617,23 @@ function upperTsWithBonus(){
         $('#g1Bs').html(35);
     }
     $('#g1TUS').html(sum);
+    $('#g1TUSB').html(sum);
+}
+var bottomArray = ['g13K', 'g14K', 'g1Fh', 'g1Ss', 'g1Ls', 'g1Y', 'g1C'];
+function addBottom() {
+    var numsB = [];
+    for (var i = 0; i < topArray.length; i++) {
+        if (document.getElementById(bottomArray[i]).innerHTML === '' || document.getElementById(bottomArray[i]).innerHTML === null) {
+            numsB.push(0);
+        } else {
+            numsB.push(parseInt(document.getElementById(bottomArray[i]).innerHTML));
+        }
+        sumB = numsB.reduce((a,b) => a+b);
+        $('#g1TLS').html(sumB);
+        var topSec = parseInt(document.getElementById('g1TUS').innerHTML);
+        var bottomSec = parseInt(document.getElementById('g1TLS').innerHTML);
+        var GT = topSec + bottomSec;
+        $('#g1GT').html(GT);
+        // YahtzeeBonus();
+    }
 }
