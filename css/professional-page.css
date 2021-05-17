@@ -1,0 +1,16 @@
+img{
+    width: 250px;
+    box-shadow: 2px 5px lightgray;
+    border: 1px solid lightgray;
+}
+li{
+    list-style: none;
+    margin: 3px 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 2px;
+}
+.navbar{
+    border: 2px solid black;
+    border-radius: 2px;
+}

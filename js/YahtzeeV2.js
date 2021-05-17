@@ -637,3 +637,5 @@ function addBottom() {
         // YahtzeeBonus();
     }
 }
+
+// FIGURE OUT TURN COUNT AND YAHTZEE BONUS
