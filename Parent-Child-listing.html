@@ -17,15 +17,9 @@
     <script>
       var array = [];
       var bodyChildren = $('body').children();
-      for(var i = 0; i < 5; i++){
-        array.push(bodyChildren[i])
-        console.log(array[i]);
-      }
+      bodyChildren.forEach( a => array.push(a.key));
       var show = array.join(",");
       console.log(show);
-      let regEx = /\[object html\gi;
-      let replaceW = '';
-      document.getElementById('first').innerHTML = show.replace(regEx,replaceW);
     </script>
   </body>
 </html>
