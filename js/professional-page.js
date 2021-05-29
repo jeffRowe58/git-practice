@@ -86,53 +86,35 @@ $('#modalButton').click(function(){
 
 
 
-
-
-
-
-
-
 function setKeys () {
-   var newComment = {
+    newComment = {
         "email": $('#email').val(),
         "comments": $('#comment').val(),
         "rating": "5"
     }
-
-        var postOptions = {
-            method: 'POST',
-            headers: {
-                'Content-type': 'application/json',
-            },
-            body: JSON.stringify(newComment)
-        }
-        fetch("https://steel-torch-cobweb.glitch.me/comments", postOptions)
-            .then(getPoll);
+    setTimeout(postSet, 500);
 }
-
-
-
-
-
-
-
-    var getOptions = {
-        method: 'GET',
+var newComment;
+var postOptions;
+function postSet(){
+    postOptions= {
+        method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
-        }
-    };
-
-function getPoll(){
-    fetch("https://steel-torch-cobweb.glitch.me/comments", getOptions)
-        .then(resp => resp.json())
-        .then(comments => {
-            for (let comment of comments) {
-                console.log(comment);
-                let htmlStr = `<div id="commentContainer" class="d-flex flex-column col-4"><h1 class="d-flex">Comments</h1><p>Email: : ${comment.email}<p>Comment: ${comment.comments}</p><p><strong>Rating:</strong> ${comment.rating}</div>`;
-
-
-                $('#container').append(htmlStr);
-            }
-        });
+            'Content-type': 'application/json',
+        },
+        body: JSON.stringify(newComment)
+    }
+    sent();
 }
+
+function sent() {
+    fetch("https://steel-torch-cobweb.glitch.me/comments", postOptions).then(getPoll);
+
+}
+
+
+
+
+
+
+

@@ -9,5 +9,28 @@
 
 <script src="js/jquery-3.6.0.min.js"></script>
 <script src="js/professional-page.js"></script>
+
+<script>
+    var getOptions = {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    };
+
+    function getPoll(){
+        fetch("https://steel-torch-cobweb.glitch.me/comments", getOptions)
+            .then(resp => resp.json())
+            .then(comments => {
+                for (let comment of comments) {
+                    console.log(comment);
+                    let htmlStr = `<div id="commentContainer" class="d-flex flex-column col-4"><h1 class="d-flex">Comments</h1><p>Email: : ${comment.email}<p>Comment: ${comment.comments}</p><p><strong>Rating:</strong> ${comment.rating}</div>`;
+
+
+                    $('#container').append(htmlStr);
+                }
+            });
+    }
+</script>
 </body>
 </html>
