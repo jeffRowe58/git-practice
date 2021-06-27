@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <title>Forms</title>
+      <link rel="stylesheet" href="css/cert-forms.css">
+  </head>
+  <body>
+    <h1 id="title">Technology Survey</h1>
+    <h3 id="description"><em>Please take the time to fill this out.</em></h3>
+    <div class="form">
+        <form id="survey-form">
+            <label id="name-label" for="name">Name</label><br>
+                <input id="name" type="text" placeholder="Please enter your name"><br>
+            <label id="email-label" for="email">Email</label><br>
+                <input id="email" type="email" placeholder="Please enter you email"><br>
+            <label id="number-label" for="number">Number</label><br>
+                <input id="number" type="number" min="16" max="99" placeholder="Please enter your age must be 16 or older"><br>
+            <label id="dropdown-label" for="dropdown">What is you primary purpose for visiting our site?</label><br>
+                <select id="dropdown" required>
+                    <option value="" disabled>--Choose an option--</option>
+                    <option value="learnLanguage">Learn A New Language</option>
+                    <option value="refresh">Refresher Training</option>
+                    <option value="jobRequired">Job Required Training</option>
+                </select><br>
+            <label id="radio-label">What OS are you running?</label><br>
+            <div class="radio">
+                    Windows<input  type="radio" name="OS" onclick="hide()">
+                    Linux<input  type="radio" name="OS" onclick="hide()">
+                    MacOS<input type="radio" name="OS" onclick="hide()">
+                    Other<input type="radio" name="OS" onclick="show()">
+            </div>
+                <label id="other-label" for="other">Which OS do you use?</label><br>
+                    <input type="text" id="other"><br>
+            <label id="checkbox-label">How did you hear about us?</label><br>
+            <div class="checkbox">
+                Social Media<input type="checkbox" value="social-media" onclick="hide2()">
+                T.V.<input type="checkbox" value="tv" onclick="hide2()">
+                Radio<input type="checkbox" value="radio" onclick="hide2()">
+                Other<input type="checkbox" value="other" onclick="show2()">
+            </div>
+            <label for="other-checkbox" id="checkbox-other-label">How did you hear of us?</label><br>
+            <input type="text" id="other-checkbox"><br>
+
+            <button id="submit" type="submit">Submit</button>
+        </form>
+    </div>
+  <script src="js/cert-form.js"></script>
+  </body>
+</html>
