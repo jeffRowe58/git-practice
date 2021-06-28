@@ -1,0 +1,23 @@
+body{
+    margin:0;
+}
+
+h1{
+    margin: 0 0 5px 0;
+}
+
+.logo {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin: 5px 8px;
+    border: white solid 2px;
+}
+
+.header{
+    background-color: darkgrey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
