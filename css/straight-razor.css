@@ -33,6 +33,9 @@ h1{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 #nav-bar{
     width: 100%;
@@ -56,27 +59,29 @@ h1{
 
 
 #grindPoint{
+
+    margin-top: 295px;
+    display: flex;
+    flex-direction: column;
     width: 90vw;
-    margin: 5px;
+    min-height: 95vh;
 
 }
 
 .grind{
+    text-align: center;
     width: 450px;
     border: black solid 2px;
     position: center;
 }
 .point{
+    text-align: center;
     width: 450px;
-    height: 260px;
     border: black solid 2px;
     position: center;
-    overflow: scroll;
 }
 
-img>.point{
-    width: 450px;
-}
+
 
 .forSale>h2{
     background-color: #dfdfdf;
@@ -89,6 +94,7 @@ img>.point{
 }
 
 .razorCard{
+    width: 95%;
     border-top: 1px solid black;
     border-left: 2px solid black;
     border-right: 2px solid black;
@@ -97,8 +103,15 @@ img>.point{
     margin-top: 5px;
 }
 
+.razor{
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .razors{
-    height: 155px;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
     width: 215px;
     border: black solid 2px;
     background-color: white;
@@ -117,6 +130,5 @@ img>.point{
 }
 
 .rightCard{
-    height: 270px;
     width: 450px;
 }
