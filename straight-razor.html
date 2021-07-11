@@ -7,69 +7,77 @@
     </head>
     <body>
         <div id="main">
-            <div class="header">
+            <header id="header">
                 <img id="header-img" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/straight-razors-1613683084.jpg?crop=1.00xw:1.00xh;0,0&resize=980:*">
                 <h1>STRAIGHT RAZORS</h1>
-                <div id="nav-bar">
+                <nav id="nav-bar">
                      <ul id="nav">
-                         <li class="pill">Grinds</li>
-                         <li class="pill">Points</li>
-                         <li class="pill">For Sale</li>
+                         <li class="nav-link"><button onclick="location='#grinds'">Grinds</button></li>
+                         <li class="nav-link"><button onclick="location='#points'">Points</button></li>
+                         <li class="nav-link"><button onclick="location='#forSale'">For Sale</button></li>
                          <li>Search:<input type="text" id="search"></li>
                      </ul>
-                </div>
-                <form method="post" action="#">
+                </nav>
+                <form id="form" method="post" action="https://www.freecodecamp.com/email-submit">
                     <label for="email">Email: </label>
-                    <input type="email" id="email">
-                    <input type="submit">
+                    <input type="email" id="email" name="email" placeholder="Enter your email address">
+                    <input type="submit" id="submit">
                 </form>
-            </div>
+            </header>
             <div id="grindPoint">
-                <div class="leftCard">
-                    <div class="grind">
-                        <h2>Grinds</h2>
+                <section id="grinds">
+                    <div class="leftCard">
+                        <div class="grind">
+                            <h2>Grinds</h2>
+                        </div>
+                        <img id="point" class="grind" src="https://sharpologist.com/wp-content/uploads/2016/01/StraightRazorGrinds.jpg" alt="grinds">
                     </div>
-                    <img id="point" class="grind" src="https://sharpologist.com/wp-content/uploads/2016/01/StraightRazorGrinds.jpg" alt="grinds">
-                </div>
-                <div class="rightCard">
-                    <div class="point">
-                        <h2>Points</h2>
+                </section>
+                <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/bbxgv0-KNA0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <br>
+                <section id="points">
+                    <div class="rightCard">
+                        <div class="point">
+                            <h2>Points</h2>
+                        </div>
+                        <img class="point" src="https://sharpologist.com/wp-content/uploads/2016/01/BladePoints.jpg?ezimgfmt=rs:228x300/rscb5/ng:webp/ngcb5"
+                             alt="points">
                     </div>
-                    <img class="point" src="https://sharpologist.com/wp-content/uploads/2016/01/BladePoints.jpg?ezimgfmt=rs:228x300/rscb5/ng:webp/ngcb5"
-                         alt="points">
-                </div>
-                <div class="razorCard">
-                    <div class="forSale">
-                        <h2>Razors for Sale</h2>
+                </section>
+                <section id="forSale">
+                    <div class="razorCard">
+                        <div class="forSale">
+                            <h2>Razors for Sale</h2>
+                        </div>
+                        <div class="razor">
+                            <div class="razors">
+                                <p><strong>Round point</strong></p>
+                                <p>Hart Steel 6/8 Satin Finish Round Point Straight Razor</p>
+                                <p><strong>Price: $205.00</strong></p>
+                            </div>
+                            <div class="razors">
+                                <p><strong>Spike point</strong></p>
+                                <p>Hart Steel 6/8 Satin Finish Square Point Straight Razor</p>
+                                <p><strong>Price: $195.00</strong></p>
+                            </div>
+                            <div class="razors">
+                                <p><strong>Barber's notch</strong></p>
+                                <p>The Butcher - By The Blades Grim</p>
+                                <p><strong>Price: $385.00</strong></p>
+                            </div>
+                            <div class="razors">
+                                <p><strong>Spanish point</strong></p>
+                                <p>Boker Spanish Point Stainless Steel Straight Razor, 5/8</p>
+                                <p><strong>Price: $119.00</strong></p>
+                            </div>
+                            <div class="razors">
+                                <p><strong>French point</strong></p>
+                                <p>Portland Razor Co. 7/8 French Point Straight Razor</p>
+                                <p><strong>Price: $450.00</strong></p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="razor">
-                        <div class="razors">
-                            <p><strong>Round point</strong></p>
-                            <p>Hart Steel 6/8 Satin Finish Round Point Straight Razor</p>
-                            <p><strong>Price: $205.00</strong></p>
-                        </div>
-                        <div class="razors">
-                            <p><strong>Spike point</strong></p>
-                            <p>Hart Steel 6/8 Satin Finish Square Point Straight Razor</p>
-                            <p><strong>Price: $195.00</strong></p>
-                        </div>
-                        <div class="razors">
-                            <p><strong>Barber's notch</strong></p>
-                            <p>The Butcher - By The Blades Grim</p>
-                            <p><strong>Price: $385.00</strong></p>
-                        </div>
-                        <div class="razors">
-                            <p><strong>Spanish point</strong></p>
-                            <p>Boker Spanish Point Stainless Steel Straight Razor, 5/8</p>
-                            <p><strong>Price: $119.00</strong></p>
-                        </div>
-                        <div class="razors">
-                            <p><strong>French point</strong></p>
-                            <p>Portland Razor Co. 7/8 French Point Straight Razor</p>
-                            <p><strong>Price: $450.00</strong></p>
-                        </div>
-                    </div>
-                </div>
+                </section>
             </div>
             <p>All information is accreditted to Sharpologist at <a href="https://sharpologist.com/guide-conventional-straight-razors/">A Guide to Conventional Straight Razors</a>.</p>
             <p>Razor name and prices came from google searches.</p>
