@@ -1,0 +1,14 @@
+.nav-link{
+    box-sizing: border-box;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    width: 120px !important;
+    height: 25px;
+}
+.navUl{
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+    padding: 0;
+}
