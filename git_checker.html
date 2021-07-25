@@ -6,36 +6,16 @@
 
 </head>
 <body>
-<div id="dateOfLast"></div>
-<label for="userInput">Please insert user name</label>
+<div>
+    <form action=""></form>
+</div>
+<label for="userInput">Please insert word</label>
 <input type="text" id="userInput">
-<button type="button" onclick="">Submit</button>
-
+<button id="sendit" type="button">Submit</button>
+<div id="div1"></div>
 
 <script src="js/jquery-3.6.0.min.js"></script>
 <script src="js/keys.js"></script>
-<script type="module">
-    import { Octokit } from "https://cdn.skypack.dev/@octokit/core";
-
-var results =  [];
-
-    async function getData() {
-
-        const octokit = new Octokit({ auth: GITHUB_API_TOKEN });
-         var project = await octokit.request('GET /repos/{owner}/{repo}/projects', {
-            owner: 'jeffRowe58',
-             repo: 'codeup-web-exercises',
-            mediaType: {
-                previews: [
-                    'inertia'
-                ]
-            }
-        })
-        console.log(project);
-
-    }
-    getData();
-</script>
-<script src="js/exercise_scanner.js"></script>
+<script src="js/thesaurusAPI.js"></script>
 </body>
 </html>
