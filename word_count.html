@@ -10,27 +10,45 @@
             overflow-scrolling: auto;
             resize: none;
         }
-        .container{
-            width:350px;
-            height: 150px;
+
+        .container {
+            width: 350px;
+            max-height: 150px;
+            overflow-scrolling: auto;
+        }
+
+        table{
+            border-collapse: collapse;
+        }
+
+        td {
+            text-align: center;
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+        .body{
+            display: flex;
+            justify-content: space-around;
         }
     </style>
     <script src="js/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-<form method="post">
-<textarea id="input"></textarea>
-    <button id="sendIt" type="button">Count 'em</button>
-</form>
-<div class="container">
-<table id="words">
-    <tr>
-        <th>Word</th>
-        <th>Count</th>
-    </tr>
+<div class="body">
+    <form>
+        <textarea id="input"></textarea><br>
+        <button id="sendIt" type="button">Count 'em</button>
+    </form>
+    <div class="container">
+        <table class="container" id="words">
+            <tr>
+                <th>Word</th>
+                <th>Count</th>
+            </tr>
 
 
-</table>
+        </table>
+    </div>
 </div>
 <script src="js/word_count.js"></script>
 </body>
