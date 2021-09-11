@@ -1,5 +1,22 @@
-var res = $("#sendit").click(function(){
-    var input = $("#userInput").val();
+var input = "";
+var array = [];
+var results = [];
+var testCorrect = [];
+var res = $("#userInput").keyup(function(e){
+    var pressedKey = e.which;
+    if(pressedKey === 32){
+    input = $("#userInput").val();
+    input = input.replaceAll(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "").toLowerCase();
+    array = input.split(" ");
+    testCorrect = array.filter( word => (word.length > 3));
+    results = getWordCntRd(testCorrect);
+
+   Object.keys(results).forEach((key) => {
+       if(results[key] > 2){
+           console.log(key + " " + results[key]);
+           $('#postResults').append("<p>" + key + " " + results[key] + "</p>")
+       }
+   })
     // $.ajax({
     //     method: "GET",
     //     $curl: "https://projects.propublica.org/nonprofits/api/v2/organizations/" + input + ".json",
@@ -18,5 +35,11 @@ var res = $("#sendit").click(function(){
     //     }
     // });
 
-    console.log(input);
-})
+}})
+
+function getWordCntRd() {
+    return testCorrect.reduce((prev, nxt) => {
+        prev[nxt] = (prev[nxt] + 1) || 1;
+        return prev;
+    }, {});
+}
