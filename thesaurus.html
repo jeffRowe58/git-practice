@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>thesaurus</title>
+
+    <style>
+        #userInput {
+            width: 450px;
+            height: 450px;
+            resize: none;
+
+        }
+
+        .card {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .resultsDiv {
+            border: 1px solid black;
+            width: 250px;
+            height: 450px;
+            overflow: hidden;
+            overflow-scrolling: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <div>
+        <label for="userInput">Please enter text</label>
+        <textarea id="userInput"></textarea>
+    </div>
+    <div id="div1" class="resultsDiv"></div>
+</div>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/keys.js"></script>
+<script src="js/thesaurusAPI.js"></script>
+</body>
+</html>
