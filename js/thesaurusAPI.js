@@ -5,6 +5,9 @@ var testCorrect = [];
 var res = $("#userInput").keyup(function (e) {
     var pressedKey = e.which;
     if (pressedKey === 32) {
+        array = [];
+        results = [];
+        testCorrect = [];
         input = $("#userInput").val();
         input = input.replaceAll(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "").toLowerCase();
         array = input.split(" ");
@@ -29,6 +32,7 @@ var res = $("#userInput").keyup(function (e) {
                                 $("#div1").append("<p>" + e + "</p>");
                             })
                             outputArray = [];
+                            output = "";
                         }
                     },
                     error: function (xhr, status, error) {

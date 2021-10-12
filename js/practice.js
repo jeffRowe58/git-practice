@@ -75,20 +75,20 @@
 // console.log(allIndexesOf(fruits, "pineapple"));
 
 
-var bugs = ['mosquito', 'ant', 'scorpion', 'ant', 'ant','mosquito', 'typo', 'reference error', 'type error'];
-function removeAll(x,y){
-    for(var i = 0; i < x.length; i++){
-        if(x[i] === y){
-            x.splice(i, 1);
-            i--;
-        }
-
-    }
-    return x;
-}
-console.log(removeAll(bugs,'ant'));
-console.log(removeAll(bugs, "mosquito"));
-console.log(bugs, "roach");
+// var bugs = ['mosquito', 'ant', 'scorpion', 'ant', 'ant','mosquito', 'typo', 'reference error', 'type error'];
+// function removeAll(x,y){
+//     for(var i = 0; i < x.length; i++){
+//         if(x[i] === y){
+//             x.splice(i, 1);
+//             i--;
+//         }
+//
+//     }
+//     return x;
+// }
+// console.log(removeAll(bugs,'ant'));
+// console.log(removeAll(bugs, "mosquito"));
+// console.log(bugs, "roach");
 
 // var theTruck = {
 //     make: "Toyota",
@@ -110,55 +110,55 @@ console.log(bugs, "roach");
 // theTruck.drive();
 // theTruck.drive();
 
-function twoDice(x) {
-    var res = [];
-    while (res.length < x) {
-        var die1 = Math.floor(Math.random() * (6) + 1);
-        var die2 = Math.floor(Math.random() * (6) + 1);
-        res.push(die1 + die2);
-    }
-    return res;
-}
-//twoDice(9);
-
-function twentySideDie(x){
-    var res = [];
-    while(res.length < x) {
-        var twentyDie = Math.floor(Math.random() * (20) + 1);
-        res.push(twentyDie);
-    }
-    return res;
-}
-//(twentySideDie(9));
-
-function twelveSidedDie(x){
-    var res = [];
-    while(res.length < x) {
-        var twelveDie = Math.floor(Math.random() * (12) + 1);
-        res.push(twelveDie);
-    }
-    return res;
-}
-//(twelveSidedDie(7));
-
-function tetrahedron(x) {
-    var res = [];
-    while(res.length < x) {
-    var tetrahDie = Math.floor(Math.random() * (4) + 1);
-    res.push(tetrahDie);
-}
-    return res;
-}
-//tetrahedron(7);
-
-function rollDie(x) {
-    var res = [];
-    while(res.length < x) {
-        var Onedie = Math.floor(Math.random() * (6) + 1);
-        res.push(Onedie);
-    }
-    return res;
-}
+// function twoDice(x) {
+//     var res = [];
+//     while (res.length < x) {
+//         var die1 = Math.floor(Math.random() * (6) + 1);
+//         var die2 = Math.floor(Math.random() * (6) + 1);
+//         res.push(die1 + die2);
+//     }
+//     return res;
+// }
+// //twoDice(9);
+//
+// function twentySideDie(x){
+//     var res = [];
+//     while(res.length < x) {
+//         var twentyDie = Math.floor(Math.random() * (20) + 1);
+//         res.push(twentyDie);
+//     }
+//     return res;
+// }
+// //(twentySideDie(9));
+//
+// function twelveSidedDie(x){
+//     var res = [];
+//     while(res.length < x) {
+//         var twelveDie = Math.floor(Math.random() * (12) + 1);
+//         res.push(twelveDie);
+//     }
+//     return res;
+// }
+// //(twelveSidedDie(7));
+//
+// function tetrahedron(x) {
+//     var res = [];
+//     while(res.length < x) {
+//     var tetrahDie = Math.floor(Math.random() * (4) + 1);
+//     res.push(tetrahDie);
+// }
+//     return res;
+// }
+// //tetrahedron(7);
+//
+// function rollDie(x) {
+//     var res = [];
+//     while(res.length < x) {
+//         var Onedie = Math.floor(Math.random() * (6) + 1);
+//         res.push(Onedie);
+//     }
+//     return res;
+// }
 //rollDie(12);
 
 // function listOfRolls(){
@@ -171,13 +171,13 @@ function rollDie(x) {
 // }
 // console.log(listOfRolls());
 
-var funArray = [twoDice, twentySideDie, twelveSidedDie, tetrahedron, rollDie];
-function listOfRollsFromDieFunction(x,y){
-    var die = [];
-    die.push(y(x));
-
-    return console.log("The dice you rolled were " + die);
-}
+// var funArray = [twoDice, twentySideDie, twelveSidedDie, tetrahedron, rollDie];
+// function listOfRollsFromDieFunction(x,y){
+//     var die = [];
+//     die.push(y(x));
+//
+//     return console.log("The dice you rolled were " + die);
+// }
 
 //var userCount = parseFloat(prompt("How many die would you like to roll?"));
 //var userDie = parseFloat(prompt("Which type of dice would you like to roll?" + "\n" + "1) For two dice" + "\n" + "2) For twenty sided die" + "\n" + "3) For twelve sided die" + "\n" + "4) tetrahedron die" + "\n" + "5) For a single die"));
@@ -423,3 +423,44 @@ function listOfRollsFromDieFunction(x,y){
 //     return sandwich;
 // }
 // console.log(makeSandwichObjects(breads, fillings))
+
+var array = [1, 2, 3, 4, 5, 7]
+var target = 12;
+
+function indices(array, target){
+    for(var i = 0; i < array.length; i++){
+        for(var j = 1; j < array.length; j++){
+            if(array[i] + array[j] === target){
+                return i + " and " + j;
+            }
+        }
+    }
+}
+
+console.log(indices(array, target));
+
+var stringArray = ["smart", "lift", "tat", "bat"];
+
+function commonChar (A){
+    const [first, ...rest] = A.sort((a,b) => -(a.length - b.length));
+    const duplicates = [];
+    [...first].forEach(e => {
+        let isDuplicate = true;
+        for(let x = 0, len = rest.length; x < len; x++){
+            let letters = rest[x];
+            const i = letters.search(e);
+            if(i !== -1){
+                letters = letters.slice(0, i) + letters.slice(i+1);
+                rest[x] = letters;
+            }else{
+                isDuplicate = false;
+            }
+        }
+        if(isDuplicate){
+            duplicates.push(e);
+        }
+    });
+    return duplicates;
+}
+
+console.log(commonChar(stringArray));
